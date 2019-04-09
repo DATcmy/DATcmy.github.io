@@ -1,0 +1,69 @@
+.leftgon {
+	FLOAT: left; WIDTH: 238px; HEIGHT: 100%
+}
+.leftgonRight {
+	FLOAT: left; BACKGROUND-IMAGE: url(http://www.cmass.edu.hk/images/content_bga.gif); FONT: 12px/20px arial; WIDTH: 238px; BACKGROUND-REPEAT: repeat; HEIGHT: 21px
+}
+.leftgon_TabOne {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; BACKGROUND-IMAGE: url(http://www.cmass.edu.hk/images/content_bga_s.gif); PADDING-BOTTOM: 0px; WIDTH: 118px; CURSOR: pointer; COLOR: #666666; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.leftgon_TabTwo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 119px; CURSOR: pointer; COLOR: #000000; PADDING-TOP: 0px; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.leftgon_TabSun {
+	FLOAT: left; BORDER-LEFT: #cccccc 1px solid; HEIGHT: 21px
+}
+.leftgon_Content {
+	PADDING-LEFT: 0px; FLOAT: left; FONT: 12px arial
+}
+.leftgon_Content A {
+	FONT: 12px arial; COLOR: #00489a; TEXT-DECORATION: none
+}
+.leftgon_Content A:hover {
+	FONT: 12px arial; COLOR: #0078ff; TEXT-DECORATION: none
+}
+.Top20table {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 238px; BORDER-RIGHT-WIDTH: 0px
+}
+.Top20table .blue {
+	FONT: 12px arial; BACKGROUND-COLOR: #e3eafa
+}
+.Top20table .color {
+	FONT: 12px arial; BACKGROUND-COLOR: #f5f5f5
+}
+.leftDra {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: right; BORDER-LEFT: #cccccc 1px solid; WIDTH: 172px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 200px
+}
+.leftDragonRight {
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#008CE5", endColorStr="#005890", gradientType="0"); FLOAT: left; BACKGROUND-IMAGE: url(http://www.cmass.edu.hk/images/index_bg.gif); FONT: 12px/20px arial; WIDTH: 172px; BACKGROUND-REPEAT: repeat; HEIGHT: 21px
+}
+.leftDragon_TabOne {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#CBEBFF", endColorStr="#ffffff", gradientType="0"); FLOAT: left; BACKGROUND-IMAGE: url(http://www.cmass.edu.hk/images/index_select.gif); PADDING-BOTTOM: 0px; WIDTH: 86px; CURSOR: pointer; COLOR: #006aad; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.leftDragon_TabTwo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 85px; CURSOR: pointer; COLOR: #ffffff; PADDING-TOP: 0px; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.leftDragon_TabSun {
+	FLOAT: left; BORDER-LEFT: #cccccc 1px solid; HEIGHT: 21px
+}
+.leftDragon_Content {
+	PADDING-LEFT: 1px; FLOAT: left; PADDING-TOP: 3px
+}
+.leftDra_1 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: right; MARGIN-LEFT: 2px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 172px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 200px
+}
+.leftDraRight {
+	FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#008CE5", endColorStr="#005890", gradientType="0"); FLOAT: left; BACKGROUND-IMAGE: url(http://www.cmass.edu.hk/images/index_bg.gif); WIDTH: 172px; LINE-HEIGHT: 21px; BACKGROUND-REPEAT: repeat; HEIGHT: 21px
+}
+.leftDra_TabOne {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#CBEBFF", endColorStr="#ffffff", gradientType="0"); FLOAT: left; BACKGROUND-IMAGE: url(http://www.cmass.edu.hk/images/index_select.gif); PADDING-BOTTOM: 0px; WIDTH: 58px; CURSOR: pointer; COLOR: #006aad; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.leftDra_TabTwo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 56px; CURSOR: pointer; COLOR: #ffffff; PADDING-TOP: 0px; HEIGHT: 21px; TEXT-ALIGN: center
+}
+.leftDra_TabSun {
+	FLOAT: left; BORDER-LEFT: #cccccc 1px solid; CURSOR: pointer; HEIGHT: 21px
+}
+.leftDra_Content {
+	PADDING-LEFT: 1px; FLOAT: left; PADDING-TOP: 3px
+}

@@ -1,0 +1,564 @@
+BODY {
+	MARGIN: 0px; WIDTH: 980px; BACKGROUND-COLOR: #ffffff
+}
+.frame_w {
+	DISPLAY: block; MARGIN: 0px; WIDTH: 980px
+}
+.lm_w {
+	FLOAT: left; WIDTH: 135px; BACKGROUND-COLOR: #ffffff
+}
+.h_w {
+	FLOAT: left; WIDTH: 980px; HEIGHT: 90px
+}
+.tm_w {
+	FLOAT: left; WIDTH: 980px; HEIGHT: 20px
+}
+.fb_w {
+	FLOAT: left; WIDTH: 980px; BACKGROUND-COLOR: #ffffff
+}
+.c_w {
+	FLOAT: right; WIDTH: 845px; BACKGROUND-COLOR: #ffffff
+}
+.f_w {
+	BORDER-TOP: #cccccc 1px solid; DISPLAY: block; FLOAT: left; WIDTH: 980px
+}
+.chb {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://www.cmass.edu.hk/images/header_bg.gif) repeat-x; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 980px; PADDING-TOP: 0px; HEIGHT: 90px
+}
+.cH {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/aalogo.gif) repeat-x; FLOAT: left; WIDTH: 252px; HEIGHT: 90px
+}
+.cB {
+	FLOAT: left; WIDTH: 728px; HEIGHT: 90px
+}
+.fL {
+	FLOAT: left; FONT: 12px arial; WIDTH: 980px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.fS {
+	BORDER-TOP: #007ac7 1px solid; FLOAT: left; PADDING-BOTTOM: 7px; FONT: 12px arial; WIDTH: 980px; COLOR: #ffffff; PADDING-TOP: 6px; BACKGROUND-COLOR: #00578e; TEXT-ALIGN: center
+}
+.fB {
+	DISPLAY: block; HEIGHT: 20px; BACKGROUND-COLOR: #eaf2ff
+}
+.fB A {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 14px; COLOR: #00578e; TEXT-DECORATION: none
+}
+.fB A:hover {
+	COLOR: #009cff; TEXT-DECORATION: none
+}
+.fS A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #ffffcc; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+.fS A:hover {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #ffff00; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+.fBs {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://www.cmass.edu.hk/images/footbtn_point.gif) no-repeat; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.fI {
+	FLOAT: left; FONT: 12px arial; WIDTH: 980px; HEIGHT: 55px; BACKGROUND-COLOR: #00578e
+}
+.tGy {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 55px; PADDING-BOTTOM: 0px; COLOR: #dddddd; PADDING-TOP: 4px
+}
+.fDC {
+	FLOAT: left; PADDING-BOTTOM: 7px; FONT: 10px arial; WIDTH: 980px; COLOR: #dddddd; BACKGROUND-COLOR: #00578e; TEXT-ALIGN: center
+}
+.menu {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 135px; PADDING-TOP: 0px
+}
+.mTable {
+	FLOAT: left; MARGIN-BOTTOM: 8px; WIDTH: 135px
+}
+.mT {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/leftmenu_title.gif) repeat-x; FLOAT: left; WIDTH: 135px; PADDING-TOP: 2px; HEIGHT: 18px
+}
+.mT_f {
+	PADDING-LEFT: 4px; FONT: 12px arial; COLOR: #ffffff
+}
+.mT_t {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FLOAT: left; PADDING-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 125px; PADDING-TOP: 4px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f5f5f5
+}
+.mT_t_n {
+	FONT: 12px arial
+}
+.mT_t_n UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.mT_t_n UL LI {
+	DISPLAY: inline
+}
+.mT_t_n UL LI A {
+	PADDING-LEFT: 4px; COLOR: #000000; TEXT-DECORATION: none
+}
+.mT_t_n UL LI A:hover {
+	PADDING-LEFT: 4px; COLOR: #0187db; TEXT-DECORATION: none
+}
+.mT_t_ {
+	FONT: 12px arial
+}
+.mT_t_ UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.mT_t_ UL LI {
+	DISPLAY: inline
+}
+.mT_t_ UL LI A {
+	PADDING-LEFT: 10px; BACKGROUND: url(http://www.cmass.edu.hk/images/menutri.gif) no-repeat; COLOR: #000000; TEXT-DECORATION: none
+}
+.mT_t_ UL LI A:hover {
+	PADDING-LEFT: 10px; BACKGROUND: url(http://www.cmass.edu.hk/images/menutri_over.gif) no-repeat; COLOR: #0187db; TEXT-DECORATION: none
+}
+.mT_t_s {
+	FONT: bold 12px arial
+}
+.mT_t_s UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.mT_t_s UL LI {
+	DISPLAY: inline
+}
+.mT_t_s UL LI A {
+	PADDING-LEFT: 10px; BACKGROUND: url(http://www.cmass.edu.hk/images/menutris.gif) no-repeat; COLOR: #ff6600; TEXT-DECORATION: none
+}
+.mT_t_s UL LI A:hover {
+	PADDING-LEFT: 10px; BACKGROUND: url(http://www.cmass.edu.hk/images/menutris_over.gif) no-repeat; COLOR: #ffc000; TEXT-DECORATION: none
+}
+.mBt {
+	FLOAT: left; MARGIN-BOTTOM: 8px; WIDTH: 135px; max-height: 350px
+}
+.mI_e {
+	FONT: 12px arial
+}
+.mI_e UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 35px
+}
+.mI_e UL LI {
+	DISPLAY: inline
+}
+.mI_e UL LI A {
+	COLOR: #00578e; TEXT-DECORATION: none
+}
+.mI_e UL LI A:hover {
+	COLOR: #009cff; TEXT-DECORATION: none
+}
+.mI_e UL LI IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-RIGHT-WIDTH: 0px
+}
+.cF {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 845px; PADDING-TOP: 0px
+}
+.cM {
+	MARGIN-TOP: 0px; FLOAT: left; MARGIN-LEFT: 0px; WIDTH: 489px; MARGIN-RIGHT: 0px
+}
+.cR {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 356px; PADDING-TOP: 0px
+}
+IMG.c_Ti {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 3px; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.c_Ti_text {
+	PADDING-LEFT: 3px; FLOAT: left; FONT: bold 12px arial; WIDTH: 150px; COLOR: #000000; PADDING-TOP: 3px
+}
+.c_Ta_l {
+	PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 4px; MARGIN: 0px; WIDTH: 483px
+}
+.c_Ti_l {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BACKGROUND: url(http://www.cmass.edu.hk/images/content_bg.gif) repeat-x; FLOAT: left; BORDER-LEFT: #cccccc 1px solid; WIDTH: 481px
+}
+.c_Ti_taL {
+	BORDER-RIGHT: #cccccc 1px solid; FLOAT: left; FONT: 12px arial; BORDER-LEFT: #cccccc 1px solid; WIDTH: 481px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+.c_Ti_taL UL.hkSN {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 74px
+}
+.c_Ti_taL UL.hkSN LI.time {
+	PADDING-RIGHT: 6px; FLOAT: left; FONT: 10px/25px arial; OVERFLOW: hidden; WIDTH: 29px; COLOR: #ff8400; HEIGHT: 20px
+}
+.hkSN_text {
+	FONT: 12px/16px arial; OVERFLOW: hidden; WIDTH: 433px; COLOR: #666666; HEIGHT: 72px
+}
+.hkSN_text A {
+	FONT: bold 16px arial; COLOR: #00489a; TEXT-DECORATION: none
+}
+.hkSN_text A:hover {
+	FONT: bold 16px arial; COLOR: #0078ff; TEXT-DECORATION: none
+}
+.c_Ti_taL UL.aafp {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; MARGIN: 0px; PADDING-TOP: 3px; LIST-STYLE-TYPE: none; HEIGHT: 62px
+}
+.c_Ti_taL UL.aafp LI.aafp_text {
+	OVERFLOW: hidden; WIDTH: 420px; HEIGHT: 20px
+}
+.c_Ti_taL UL.aafp LI.aafp_text A {
+	FONT: bold 16px/20px arial; COLOR: #be0000; TEXT-DECORATION: none
+}
+.c_Ti_taL UL.aafp LI.aafp_text A:hover {
+	FONT: bold 16px/20px arial; COLOR: #fc0000; TEXT-DECORATION: none
+}
+.c_Ti_taL UL.aafp LI.aafp_stext {
+	OVERFLOW: hidden; WIDTH: 420px; HEIGHT: 55px
+}
+.c_Ti_taL UL.aafp LI.aafp_stext A {
+	FONT: 12px arial; COLOR: #00489a; TEXT-DECORATION: none
+}
+.c_Ti_taL UL.aafp LI.aafp_stext A:hover {
+	FONT: 12px arial; COLOR: #0078ff; TEXT-DECORATION: none
+}
+.c_Ti_taL UL.news {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 0px; PADDING-TOP: 3px; LIST-STYLE-TYPE: none
+}
+.c_Ti_taL UL.news LI.newstime {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 2px; FLOAT: left; FONT: 10px/13px arial; OVERFLOW: hidden; WIDTH: 29px; COLOR: #ff8400
+}
+.cutnews {
+	OVERFLOW: hidden; WIDTH: 435px
+}
+.cutnews A {
+	FONT: 12px/12px arial; COLOR: #00489a; TEXT-DECORATION: none
+}
+.cutnews A:hover {
+	FONT: 12px/12px arial; COLOR: #0078ff; TEXT-DECORATION: none
+}
+.c_Ti_taL FORM.area {
+	PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 2px
+}
+.c_Ta_s {
+	PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 4px; MARGIN: 0px; WIDTH: 483px
+}
+.c_Ta_s1 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: left; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 238px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.c_Ta_s2 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: right; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 238px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.c_Ti_s {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/content_bg.gif) repeat-x; FLOAT: left; WIDTH: 238px
+}
+.c_Ti_taS {
+	FLOAT: left; FONT: 12px arial; WIDTH: 238px; BACKGROUND-COLOR: #ffffff
+}
+.c_Ti_taS UL {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 0px; PADDING-TOP: 2px; LIST-STYLE-TYPE: none; HEIGHT: 40px
+}
+.c_Ti_taS UL LI.time {
+	PADDING-RIGHT: 2px; FLOAT: left; FONT: 10px/15px arial; OVERFLOW: hidden; WIDTH: 29px; COLOR: #ff8400; HEIGHT: 25px
+}
+.cutnews_s {
+	OVERFLOW: hidden; WIDTH: 200px; HEIGHT: 40px
+}
+.cutnews_s A {
+	FONT: 12px/20px arial; COLOR: #00489a; TEXT-DECORATION: none
+}
+.cutnews_s A:hover {
+	FONT: 12px/20px arial; COLOR: #0078ff; TEXT-DECORATION: none
+}
+.fssC {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; WIDTH: 238px; BORDER-RIGHT-WIDTH: 0px
+}
+.fssC UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.fssC UL.color {
+	BORDER-TOP: #ffffff 1px solid; BACKGROUND: #f5f5f5; WIDTH: 238px; HEIGHT: 17px
+}
+.fssC UL LI {
+	FLOAT: left; OVERFLOW: hidden; WIDTH: 183px; HEIGHT: 17px; TEXT-ALIGN: center
+}
+.fssC UL LI.date {
+	WIDTH: 236px; COLOR: #ff8400; TEXT-ALIGN: right
+}
+.fssC UL LI.name {
+	PADDING-LEFT: 5px; WIDTH: 155px; TEXT-ALIGN: left
+}
+.fssC UL LI.name A {
+	FONT: 12px arial; COLOR: #00489a; TEXT-DECORATION: none
+}
+.fssC UL LI.name A:hover {
+	FONT: 12px arial; COLOR: #0078ff; TEXT-DECORATION: none
+}
+.fssC UL LI.company {
+	PADDING-RIGHT: 2px; WIDTH: 74px; TEXT-ALIGN: right
+}
+.videos {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; WIDTH: 471px; BORDER-RIGHT-WIDTH: 0px
+}
+.videos UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 105px
+}
+.videos UL LI {
+	FLOAT: left; OVERFLOW: hidden
+}
+.videos UL LI.pic {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; WIDTH: 122px; PADDING-TOP: 4px
+}
+.videos UL LI.context {
+	PADDING-LEFT: 6px; WIDTH: 335px
+}
+.vtime {
+	FONT: 10px/25px arial; COLOR: #ff8400
+}
+.ft {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/focus_bg.gif) repeat-x; FLOAT: left; WIDTH: 244px; HEIGHT: 21px
+}
+.ft IMG {
+	PADDING-RIGHT: 3px
+}
+.ft_text {
+	PADDING-LEFT: 3px; FLOAT: left; FONT: 12px arial; COLOR: #602700; PADDING-TOP: 3px
+}
+.ft_table {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FLOAT: left; PADDING-BOTTOM: 2px; WIDTH: 240px; PADDING-TOP: 2px; BACKGROUND-COLOR: #ffffff
+}
+.fb {
+	FLOAT: left; PADDING-BOTTOM: 4px; WIDTH: 980px; PADDING-TOP: 4px
+}
+.b728 {
+	FLOAT: left; WIDTH: 728px; HEIGHT: 90px
+}
+.focus {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: right; BORDER-LEFT: #cccccc 1px solid; WIDTH: 244px; BORDER-BOTTOM: #cccccc 1px solid; HEIGHT: 88px
+}
+.b350 {
+	FLOAT: right; PADDING-BOTTOM: 4px; WIDTH: 350px
+}
+.b175 {
+	FLOAT: right; PADDING-BOTTOM: 4px; WIDTH: 175px
+}
+.b468 {
+	PADDING-LEFT: 13px; FLOAT: left; PADDING-BOTTOM: 4px; WIDTH: 468px
+}
+.b230 {
+	FLOAT: right; WIDTH: 236px; PADDING-TOP: 6px
+}
+.it {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: right; MARGIN-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 348px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.indT {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/index_bg.gif) repeat-x; FLOAT: left; WIDTH: 348px; HEIGHT: 21px
+}
+IMG.indT {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 3px; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.indT_text {
+	PADDING-LEFT: 3px; FLOAT: left; FONT: 12px arial; WIDTH: 100px; COLOR: #ffffff; PADDING-TOP: 3px
+}
+.indT_table {
+	FLOAT: left; FONT: 12px arial; WIDTH: 348px; COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+.MF {
+	BORDER-TOP-WIDTH: 0px; PADDING-LEFT: 2px; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; WIDTH: 174px; BORDER-RIGHT-WIDTH: 0px
+}
+.itMF {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FLOAT: right; MARGIN-BOTTOM: 4px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 172px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.indMFT {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/index_bg.gif) repeat-x; FLOAT: left; WIDTH: 172px; HEIGHT: 21px
+}
+IMG.indMFT {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 3px; BORDER-LEFT-WIDTH: 0px; FLOAT: right; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.indMFT_text {
+	PADDING-LEFT: 3px; FLOAT: left; FONT: 12px arial; WIDTH: 100px; COLOR: #ffffff; PADDING-TOP: 3px
+}
+.indMFT_table {
+	FLOAT: left; FONT: 12px arial; WIDTH: 172px; COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+.isC {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; WIDTH: 348px; BORDER-RIGHT-WIDTH: 0px
+}
+.isC UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 16px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.isC UL.color {
+	BACKGROUND: #f5f5f5; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.isC UL.blue {
+	BACKGROUND: #e3f2fa; COLOR: #00578e; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.isC UL LI {
+	FLOAT: left; OVERFLOW: hidden; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.isC UL LI IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-RIGHT-WIDTH: 0px
+}
+.isC UL LI A {
+	COLOR: #00578e; TEXT-DECORATION: none
+}
+.isC UL LI A:hover {
+	COLOR: #009cff; TEXT-DECORATION: none
+}
+.isMFC {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; WIDTH: 172px; BORDER-RIGHT-WIDTH: 0px
+}
+.isMFC UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 16px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.isMFC UL.color {
+	BACKGROUND: #f5f5f5; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.isMFC UL.blue {
+	BACKGROUND: #e3f2fa; COLOR: #00578e; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.isMFC UL LI {
+	FLOAT: left; OVERFLOW: hidden; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.isMFC UL LI IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-RIGHT-WIDTH: 0px
+}
+.isMFC UL LI A {
+	COLOR: #00578e; TEXT-DECORATION: none
+}
+.isMFC UL LI A:hover {
+	COLOR: #009cff; TEXT-DECORATION: none
+}
+.ahC {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; WIDTH: 348px; BORDER-RIGHT-WIDTH: 0px
+}
+.ahC UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 16px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; HEIGHT: 17px
+}
+.ahC UL.color {
+	BACKGROUND: #f5f5f5; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.ahC UL.des {
+	BACKGROUND: #ffffff; LINE-HEIGHT: 16px; HEIGHT: 16px
+}
+.ahC UL.blue {
+	BACKGROUND: #e3f2fa; COLOR: #00578e; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+.ahC UL LI {
+	FLOAT: left; OVERFLOW: hidden; LINE-HEIGHT: 16px; HEIGHT: 17px
+}
+LI.lsc {
+	WIDTH: 40px; TEXT-ALIGN: center
+}
+LI.lsp {
+	WIDTH: 68px; TEXT-ALIGN: right
+}
+LI.lsr {
+	WIDTH: 120px; TEXT-ALIGN: right
+}
+LI.lswr {
+	PADDING-RIGHT: 8px; WIDTH: 78px; TEXT-ALIGN: right
+}
+LI.lsn {
+	WIDTH: 17px; TEXT-ALIGN: right
+}
+LI.lsg {
+	WIDTH: 17px; TEXT-ALIGN: right
+}
+LI.ahn {
+	PADDING-LEFT: 3px; WIDTH: 80px; TEXT-ALIGN: left
+}
+LI.ahap {
+	WIDTH: 60px; TEXT-ALIGN: right
+}
+LI.ahhp {
+	WIDTH: 60px; TEXT-ALIGN: right
+}
+LI.ahhr {
+	WIDTH: 72px; TEXT-ALIGN: right
+}
+LI.ahpah {
+	WIDTH: 68px; TEXT-ALIGN: right
+}
+.ahC UL LI.ahdes {
+	PADDING-LEFT: 3px; FONT: 11px arial; COLOR: #aaaaaa; PADDING-TOP: 3px
+}
+LI.ahn A:hover {
+	COLOR: #009cff; TEXT-DECORATION: none
+}
+LI.ahn A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #00489a; PADDING-TOP: 0px; TEXT-DECORATION: none
+}
+LI.hkname {
+	PADDING-LEFT: 3px; WIDTH: 49px; TEXT-ALIGN: left
+}
+LI.hkprice {
+	WIDTH: 74px; TEXT-ALIGN: right
+}
+LI.hkrisep {
+	WIDTH: 65px; TEXT-ALIGN: right
+}
+LI.hkpercent {
+	WIDTH: 70px; TEXT-ALIGN: right
+}
+LI.hkgraph {
+	WIDTH: 20px; TEXT-ALIGN: right
+}
+LI.hkremark {
+	FONT-SIZE: 11px; WIDTH: 346px; COLOR: #aaaaaa; TEXT-ALIGN: left
+}
+LI.cname {
+	PADDING-LEFT: 3px; WIDTH: 72px; TEXT-ALIGN: left
+}
+LI.cprice {
+	WIDTH: 62px; TEXT-ALIGN: right
+}
+LI.crise {
+	WIDTH: 72px; TEXT-ALIGN: right
+}
+LI.crisep {
+	WIDTH: 66px; TEXT-ALIGN: right
+}
+LI.cpercent {
+	WIDTH: 72px; TEXT-ALIGN: right
+}
+LI.iname {
+	PADDING-LEFT: 3px; WIDTH: 90px; TEXT-ALIGN: left
+}
+LI.iprice {
+	WIDTH: 80px; TEXT-ALIGN: right
+}
+LI.irisep {
+	WIDTH: 85px; TEXT-ALIGN: right
+}
+LI.exname {
+	PADDING-LEFT: 3px; WIDTH: 80px; TEXT-ALIGN: left
+}
+LI.exbuy {
+	WIDTH: 43px; TEXT-ALIGN: right
+}
+LI.exsell {
+	WIDTH: 43px; TEXT-ALIGN: right
+}
+LI.mcname {
+	PADDING-LEFT: 3px; WIDTH: 60px; TEXT-ALIGN: left
+}
+LI.mcbuy {
+	WIDTH: 53px; TEXT-ALIGN: right
+}
+LI.mcsell {
+	WIDTH: 53px; TEXT-ALIGN: right
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: 12px arial; COLOR: #000000; PADDING-TOP: 0px
+}
+FORM A {
+	COLOR: #00489a; TEXT-DECORATION: none
+}
+FORM A:hover {
+	COLOR: #0078ff; TEXT-DECORATION: none
+}
+INPUT.s {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: top; BORDER-RIGHT-WIDTH: 0px
+}
+INPUT.hks {
+	MARGIN-BOTTOM: 3px; HEIGHT: 15px
+}
+INPUT.as {
+	HEIGHT: 15px
+}
+INPUT.btn {
+	BORDER-RIGHT: #7f9db9 1px solid; BORDER-TOP: #7f9db9 1px solid; MARGIN-BOTTOM: 0px; FONT: 12px arial; BORDER-LEFT: #7f9db9 1px solid; WIDTH: 61px; BORDER-BOTTOM: #7f9db9 1px solid; HEIGHT: 21px; BACKGROUND-COLOR: #ffffff
+}
+INPUT.btn2 {
+	BORDER-RIGHT: #7f9db9 1px solid; BORDER-TOP: #7f9db9 1px solid; FONT: 12px arial; BORDER-LEFT: #7f9db9 1px solid; WIDTH: 45px; BORDER-BOTTOM: #7f9db9 1px solid; HEIGHT: 23px; BACKGROUND-COLOR: #ffffff
+}
+.tg {
+	COLOR: #009900
+}
+.tr {
+	COLOR: #fc0000
+}

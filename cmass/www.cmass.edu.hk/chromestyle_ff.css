@@ -1,0 +1,54 @@
+.chromeFrame {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://www.cmass.edu.hk/images/topmenu_bg.gif) repeat-x; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 980px; PADDING-TOP: 0px; HEIGHT: 20px
+}
+.chromestyle {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: 12px arial; WIDTH: 880px; PADDING-TOP: 0px
+}
+.chromestyle:unknown {
+	CLEAR: both; DISPLAY: block; VISIBILITY: hidden; HEIGHT: 0px; content: "."
+}
+.topmenuseperator {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://www.cmass.edu.hk/images/topmenu_line.gif) no-repeat; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.chromestyle UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 2px; HEIGHT: 100%; TEXT-ALIGN: left
+}
+.chromestyle UL LI {
+	DISPLAY: inline
+}
+.chromestyle UL LI A {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 22px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.chromestyle UL LI A:hover {
+	COLOR: #fffc00; TEXT-DECORATION: none
+}
+.chromestyle UL LI A.china {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 22px; COLOR: #ff0000; TEXT-DECORATION: none
+}
+.chromestyle UL LI A.china:hover {
+	COLOR: #ffcc00; TEXT-DECORATION: none
+}
+.chromestyle_right {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: 12px arial; WIDTH: 90px; PADDING-TOP: 0px
+}
+.chromestyle_right UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 2px; TEXT-ALIGN: right
+}
+.chromestyle_right UL LI {
+	DISPLAY: inline
+}
+.chromestyle_right UL LI A {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 22px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+.chromestyle_right UL LI A:hover {
+	COLOR: #fffc00; TEXT-DECORATION: none
+}
+.dropmenudiv {
+	BORDER-RIGHT: #99bace 1px solid; BORDER-TOP: #99bace 1px solid; MARGIN-TOP: 2px; Z-INDEX: 100; VISIBILITY: hidden; FONT: 12px/18px arial; MARGIN-LEFT: 1px; BORDER-LEFT: #99bace 1px solid; WIDTH: 200px; BORDER-BOTTOM: #99bace 0px solid; POSITION: absolute
+}
+.dropmenudiv A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: normal; BACKGROUND: url(http://www.cmass.edu.hk/images/topmenu_bg_over.gif) repeat-x; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#FFFFFF", endColorStr="#E4F0F7", gradientType="0"); PADDING-BOTTOM: 2px; WIDTH: 100%; COLOR: black; TEXT-INDENT: 9px; PADDING-TOP: 2px; BORDER-BOTTOM: #99bace 1px solid; TEXT-DECORATION: none
+}
+.dropmenudiv A:hover {
+	BACKGROUND: url(http://www.cmass.edu.hk/images/topmenu_bg_over2.gif) repeat-x; FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#AEE0FF", endColorStr="#E4F0F7", gradientType="0"); COLOR: #00578e
+}

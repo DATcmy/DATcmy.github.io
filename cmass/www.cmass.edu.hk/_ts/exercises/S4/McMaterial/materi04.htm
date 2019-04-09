@@ -1,0 +1,1457 @@
+<html>
+
+<!-- Mirrored from www.cmass.edu.hk/~ts/exercises/S4/McMaterial/materi04.htm by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 19 Aug 2009 02:27:41 GMT -->
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Tam Simon."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+&#31532;&#19968;&#31456;  &#29289;&#26009;   &#32244;&#32722;  1.4
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie4 && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('http://www.cmass.edu.hk/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('http://www.cmass.edu.hk/~ts/exercises/S4/');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('http://www.cmass.edu.hk/~ts/exercises/S4/');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http://www.cmass.edu.hk/~ts/exercises/S4/McMaterial/materi04.htm'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = InText.substring(sLoc,z);
+
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+
+var ExBGColor = '#bbbbee';
+
+
+
+var PageBGColor = '#ffffff';
+
+
+
+var NavBarColor = '#000066';
+
+
+var TextColor = '#000000';
+var CurrQNum = 0;
+var ALetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CorrectIndicator = ':-)';
+var IncorrectIndicator = 'X';
+var YourScoreIs = '&#20320;&#30340;&#24471;&#20998;&#25976;&#26159;';
+var Tries = 0;
+var CorrectChoices = 0;
+var ContinuousScoring = true;
+var CorrectFirstTime = '&#25152;&#26377;&#38988;&#30446;&#31532;&#19968;&#27425;&#20316;&#31572;&#27491;&#30906;&#30340;&#24471;&#20998;&#26159;';var ExerciseTitle = '&#31532;&#19968;&#31456; &#29289;&#26009; &#32244;&#32722; 1.4';
+var ExerciseSubtitle = '&#36984;&#25799;&#38988;&#32244;&#32722;';
+var Instructions = '&#28858;&#27599;&#19968;&#38988;&#36984;&#20986;&#25152;&#26377;&#27491;&#30906;&#31572;&#26696;'; //'';
+var ShuffleQs = true;
+var ShuffleAs = true;
+var DefaultRight = '&#27491;&#30906;';
+var DefaultWrong = '&#37679;&#20102;! &#20877;&#35430;&#19968;&#27425;';
+var QsToShow = 33;
+var ShowOneByOne = true;
+var ReadingURL = '';
+var EraseFeedback = true;
+var Score = 0;
+
+var PreviousPage = history.length;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#000066" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+
+NavBar+='<input type="button" value="&#33267;&#32178;&#38913;" onclick=\'parent.location="bkhome.htm"\'></input>';
+
+
+NavBar+='</font></td></form></tr>';
+if (is.CRAPBrowser){NavBar=ResolveAllURLs(NavBar)};
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#ffffff">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var QButtonsOpener = '<table border="0" width="85%" cellpadding="10">';
+QButtonsOpener += '<tr><td align="center" valign="middle"><form>';
+QButtonsOpener += '<font size="+1"><input type="button" value="&lt;=" onclick="parent.ChangeQ(-1)"></input>';
+var QButtonsCloser = '<input type="button" value="=&gt;" onclick="parent.ChangeQ(1)"></input>';
+QButtonsCloser += '</font></form></td></tr></table>';
+
+var TableOpener = '<form name="QForm">';
+TableOpener += '<table border="0" width="85%">';
+var QRow = '<tr><td valign="top" bgcolor="#bbbbee" align="right">';
+QRow += '<font size="+1" face="Geneva,Arial" color="#000000">[QNumber]</font></td>';
+QRow += '<td colspan="3" valign="top" bgcolor="#bbbbee"><font size="-1" face="Geneva,Arial" color="#000000">[Question]<br />&nbsp;';
+QRow += '</font></td></tr>';
+
+var ARow = '<tr><td></td><td valign="top" bgcolor="#bbbbee"><input type="text" value=" " size="3" name="FB_[QNum]_[ANum]"></input></td>';
+ARow += '<td valign="top" bgcolor="#bbbbee"><input type="button" value="[ALetter]" OnClick="parent.CheckAnswer([QNum],[ANum])"></input></td>';
+ARow += '<td width="100%" bgcolor="#bbbbee"><font size="-1" face="Geneva,Arial" color="#000000">[Ans]</font></td></tr>';
+
+var MARow = '<tr><td></td><td valign="top" bgcolor="#bbbbee" colspan="3"><input type="checkbox" name="A_[QNum]_[ANum]" value="[Correct]"></input>';
+MARow += '<font size="-1" face="Geneva,Arial" color="#000000">[Ans]</font></td></tr>';
+
+var CheckButton = '<tr><td></td><td valign="top" bgcolor="#bbbbee" ><input type="button" value="&#26680;&#23565;"';
+CheckButton += ' onclick="parent.CheckMulti([QNum])"></input></td></tr>';
+
+TableCloser = '</table></form>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+function ReduceItems(){
+	var ItemToDump=0;
+	var j=0;
+	while (I.length > QsToShow){
+		ItemToDump = Math.floor(I.length*Math.random());
+		for (j=ItemToDump; j<(I.length-1); j++){
+			I[j] = I[j+1];
+		}
+		I.length = I.length-1;
+	}
+}
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Feedback) {
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function StartUp(){
+
+
+
+
+//Reduce array if required
+	if (QsToShow < I.length){
+		ReduceItems();
+	}
+
+//Shuffle stuff if required
+
+	if (ShuffleQs == true){
+		I = Shuffle(I);
+	}
+
+	if (ShuffleAs == true){
+		for (var i=0; i<I.length; i++){
+			I[i][1] = Shuffle(I[i][1]);
+		}
+	}
+
+//Create arrays
+	CreateStatusArrays();
+
+
+
+//Show the first question or all of them
+	if (ShowOneByOne == false){
+		ShowAllQs();
+	}
+	else{
+		ShowQuestion(CurrQNum);
+	}
+
+//Write the top frame
+	WriteFeedback(Instructions);
+}
+
+
+I = new Array();
+
+I[0] = new Array();
+I[0][0]='\u91D1\u5C6C\u5206\u70BA';
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='\u9435\u91D1\u5C6C';
+I[0][1][0][1]='';
+I[0][1][0][2] = 1;
+I[0][1][1] = new Array();
+I[0][1][1][0]='\u975E\u9435\u91D1\u5C6C';
+I[0][1][1][1]='';
+I[0][1][1][2] = 1;
+I[0][1][2] = new Array();
+I[0][1][2][0]='\u7D14\u91D1\u5C6C';
+I[0][1][2][1]='';
+I[0][1][2][2] = 0;
+I[0][1][3] = new Array();
+I[0][1][3][0]='\u5408\u91D1';
+I[0][1][3][1]='';
+I[0][1][3][2] = 0;
+I[0][2] = 1;
+
+I[1] = new Array();
+I[1][0]='\u4E0B\u5217\u90A3\u4E00\u500B\u662F\u7531\u9435\u7926\u77F3\u6700\u5148\u63D0\u934A\u51FA\u4F86\u7684';
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='\u751F\u9435';
+I[1][1][0][1]='';
+I[1][1][0][2] = 1;
+I[1][1][1] = new Array();
+I[1][1][1][0]='\u9444\u9435';
+I[1][1][1][1]='';
+I[1][1][1][2] = 0;
+I[1][1][2] = new Array();
+I[1][1][2][0]='\u719F\u9435';
+I[1][1][2][1]='';
+I[1][1][2][2] = 0;
+I[1][1][3] = new Array();
+I[1][1][3][0]='\u78B3\u92FC';
+I[1][1][3][1]='';
+I[1][1][3][2] = 0;
+I[1][1][4] = new Array();
+I[1][1][4][0]='\u5408\u91D1\u92FC';
+I[1][1][4][1]='';
+I[1][1][4][2] = 0;
+I[1][2] = 0;
+
+I[2] = new Array();
+I[2][0]='\u751F\u9435\u542B\u78B3\u91CF\u70BA\u767E\u4EFD\u4E4B';
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='3.5';
+I[2][1][0][1]='';
+I[2][1][0][2] = 1;
+I[2][1][1] = new Array();
+I[2][1][1][0]='3';
+I[2][1][1][1]='';
+I[2][1][1][2] = 0;
+I[2][1][2] = new Array();
+I[2][1][2][0]='\u5C11\u65BC 0.3';
+I[2][1][2][1]='';
+I[2][1][2][2] = 0;
+I[2][1][3] = new Array();
+I[2][1][3][0]='0.3--0.7';
+I[2][1][3][1]='';
+I[2][1][3][2] = 0;
+I[2][1][4] = new Array();
+I[2][1][4][0]='0.7--1.5';
+I[2][1][4][1]='';
+I[2][1][4][2] = 0;
+I[2][2] = 0;
+
+I[3] = new Array();
+I[3][0]='\u9444\u9435\u542B\u78B3\u91CF\u70BA\u767E\u4EFD\u4E4B';
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='3.5';
+I[3][1][0][1]='';
+I[3][1][0][2] = 0;
+I[3][1][1] = new Array();
+I[3][1][1][0]='3';
+I[3][1][1][1]='';
+I[3][1][1][2] = 1;
+I[3][1][2] = new Array();
+I[3][1][2][0]='\u5C11\u65BC 0.3';
+I[3][1][2][1]='';
+I[3][1][2][2] = 0;
+I[3][1][3] = new Array();
+I[3][1][3][0]='0.3--0.7';
+I[3][1][3][1]='';
+I[3][1][3][2] = 0;
+I[3][1][4] = new Array();
+I[3][1][4][0]='0.7--1.5';
+I[3][1][4][1]='';
+I[3][1][4][2] = 0;
+I[3][2] = 0;
+
+I[4] = new Array();
+I[4][0]='\u4F4E\u78B3\u92FC\u542B\u78B3\u91CF\u70BA\u767E\u4EFD\u4E4B';
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='3.5';
+I[4][1][0][1]='';
+I[4][1][0][2] = 0;
+I[4][1][1] = new Array();
+I[4][1][1][0]='3';
+I[4][1][1][1]='';
+I[4][1][1][2] = 0;
+I[4][1][2] = new Array();
+I[4][1][2][0]='\u5C11\u65BC 0.3';
+I[4][1][2][1]='';
+I[4][1][2][2] = 1;
+I[4][1][3] = new Array();
+I[4][1][3][0]='0.3--0.7';
+I[4][1][3][1]='';
+I[4][1][3][2] = 0;
+I[4][1][4] = new Array();
+I[4][1][4][0]='0.7--1.5';
+I[4][1][4][1]='';
+I[4][1][4][2] = 0;
+I[4][2] = 0;
+
+I[5] = new Array();
+I[5][0]='\u4E2D\u78B3\u92FC\u542B\u78B3\u91CF\u70BA\u767E\u4EFD\u4E4B';
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='3.5';
+I[5][1][0][1]='';
+I[5][1][0][2] = 0;
+I[5][1][1] = new Array();
+I[5][1][1][0]='3';
+I[5][1][1][1]='';
+I[5][1][1][2] = 0;
+I[5][1][2] = new Array();
+I[5][1][2][0]='\u5C11\u65BC 0.3';
+I[5][1][2][1]='';
+I[5][1][2][2] = 0;
+I[5][1][3] = new Array();
+I[5][1][3][0]='0.3--0.7';
+I[5][1][3][1]='';
+I[5][1][3][2] = 1;
+I[5][1][4] = new Array();
+I[5][1][4][0]='0.7--1.5';
+I[5][1][4][1]='';
+I[5][1][4][2] = 0;
+I[5][2] = 0;
+
+I[6] = new Array();
+I[6][0]='\u9AD8\u78B3\u92FC\u542B\u78B3\u91CF\u70BA\u767E\u4EFD\u4E4B';
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='3.5';
+I[6][1][0][1]='';
+I[6][1][0][2] = 0;
+I[6][1][1] = new Array();
+I[6][1][1][0]='3';
+I[6][1][1][1]='';
+I[6][1][1][2] = 0;
+I[6][1][2] = new Array();
+I[6][1][2][0]='\u5C11\u65BC 0.3';
+I[6][1][2][1]='';
+I[6][1][2][2] = 0;
+I[6][1][3] = new Array();
+I[6][1][3][0]='0.3--0.7';
+I[6][1][3][1]='';
+I[6][1][3][2] = 0;
+I[6][1][4] = new Array();
+I[6][1][4][0]='0.7--1.5';
+I[6][1][4][1]='';
+I[6][1][4][2] = 1;
+I[6][2] = 0;
+
+I[7] = new Array();
+I[7][0]='\u63D0\u934A\u51FA\u4F86\u7684\u9444\u9435, \u5F9E\u9AD8\u6EAB\u8FC5\u901F\u51B7\u537B, \u53EF\u6210';
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0]='\u7070\u9444\u9435';
+I[7][1][0][1]='';
+I[7][1][0][2] = 0;
+I[7][1][1] = new Array();
+I[7][1][1][0]='\u767D\u9444\u9435';
+I[7][1][1][1]='';
+I[7][1][1][2] = 1;
+I[7][1][2] = new Array();
+I[7][1][2][0]='\u719F\u9435';
+I[7][1][2][1]='';
+I[7][1][2][2] = 0;
+I[7][1][3] = new Array();
+I[7][1][3][0]='\u78B3\u92FC';
+I[7][1][3][1]='';
+I[7][1][3][2] = 0;
+I[7][2] = 0;
+
+I[8] = new Array();
+I[8][0]='\u63D0\u934A\u51FA\u4F86\u7684\u9444\u9435, \u5F9E\u9AD8\u6EAB\u6162\u6162\u51B7\u537B, \u53EF\u6210';
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0]='\u7070\u9444\u9435';
+I[8][1][0][1]='';
+I[8][1][0][2] = 1;
+I[8][1][1] = new Array();
+I[8][1][1][0]='\u767D\u9444\u9435';
+I[8][1][1][1]='';
+I[8][1][1][2] = 0;
+I[8][1][2] = new Array();
+I[8][1][2][0]='\u719F\u9435';
+I[8][1][2][1]='';
+I[8][1][2][2] = 0;
+I[8][1][3] = new Array();
+I[8][1][3][0]='\u78B3\u92FC';
+I[8][1][3][1]='';
+I[8][1][3][2] = 0;
+I[8][2] = 0;
+
+I[9] = new Array();
+I[9][0]='\u4E0B\u5217\u90A3\u4E00\u53E5\u63CF\u8FF0\u767D\u9444\u9435\u662F\u5C0D\u7684';
+I[9][1] = new Array();
+I[9][1][0] = new Array();
+I[9][1][0][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u9280\u767D\u8272, \u6709\u5F88\u9AD8\u7684\u786C\u5EA6';
+I[9][1][0][1]='';
+I[9][1][0][2] = 1;
+I[9][1][1] = new Array();
+I[9][1][1][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u9280\u767D\u8272, \u8F03\u67D4\u8EDF\u800C\u5E36\u97CC\u6027';
+I[9][1][1][1]='';
+I[9][1][1][2] = 0;
+I[9][1][2] = new Array();
+I[9][1][2][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u6DF1\u7070\u8272, \u8F03\u67D4\u8EDF\u800C\u5E36\u97CC\u6027<br />';
+I[9][1][2][1]='';
+I[9][1][2][2] = 0;
+I[9][1][3] = new Array();
+I[9][1][3][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u6DF1\u7070\u8272, \u6709\u5F88\u9AD8\u7684\u786C\u5EA6';
+I[9][1][3][1]='';
+I[9][1][3][2] = 0;
+I[9][2] = 0;
+
+I[10] = new Array();
+I[10][0]='\u4E0B\u5217\u90A3\u4E00\u53E5\u63CF\u8FF0\u7070\u9444\u9435\u662F\u5C0D\u7684';
+I[10][1] = new Array();
+I[10][1][0] = new Array();
+I[10][1][0][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u9280\u767D\u8272, \u6709\u5F88\u9AD8\u7684\u786C\u5EA6';
+I[10][1][0][1]='';
+I[10][1][0][2] = 0;
+I[10][1][1] = new Array();
+I[10][1][1][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u9280\u767D\u8272, \u8F03\u67D4\u8EDF\u800C\u5E36\u97CC\u6027';
+I[10][1][1][1]='';
+I[10][1][1][2] = 0;
+I[10][1][2] = new Array();
+I[10][1][2][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u6DF1\u7070\u8272, \u8F03\u67D4\u8EDF\u800C\u5E36\u97CC\u6027<br />';
+I[10][1][2][1]='';
+I[10][1][2][2] = 1;
+I[10][1][3] = new Array();
+I[10][1][3][0]='\u65B7\u88C2\u6642\u88C2\u53E3\u5448\u6DF1\u7070\u8272, \u6709\u5F88\u9AD8\u7684\u786C\u5EA6';
+I[10][1][3][1]='';
+I[10][1][3][2] = 0;
+I[10][2] = 0;
+
+I[11] = new Array();
+I[11][0]='\u4E00\u5217\u90A3\u4E00\u500B\u8F03\u6613\u65BC\u710A\u63A5';
+I[11][1] = new Array();
+I[11][1][0] = new Array();
+I[11][1][0][0]='\u751F\u9435';
+I[11][1][0][1]='';
+I[11][1][0][2] = 0;
+I[11][1][1] = new Array();
+I[11][1][1][0]='\u9444\u9435';
+I[11][1][1][1]='';
+I[11][1][1][2] = 0;
+I[11][1][2] = new Array();
+I[11][1][2][0]='\u719F\u9435';
+I[11][1][2][1]='';
+I[11][1][2][2] = 1;
+I[11][1][3] = new Array();
+I[11][1][3][0]='\u92FC';
+I[11][1][3][1]='';
+I[11][1][3][2] = 0;
+I[11][2] = 0;
+
+I[12] = new Array();
+I[12][0]='\u92FC\u53EF\u5206\u70BA';
+I[12][1] = new Array();
+I[12][1][0] = new Array();
+I[12][1][0][0]='\u5408\u91D1\u92FC';
+I[12][1][0][1]='';
+I[12][1][0][2] = 1;
+I[12][1][1] = new Array();
+I[12][1][1][0]='\u4E0D\u92B9\u92FC';
+I[12][1][1][1]='';
+I[12][1][1][2] = 0;
+I[12][1][2] = new Array();
+I[12][1][2][0]='\u78B3\u92FC';
+I[12][1][2][1]='';
+I[12][1][2][2] = 1;
+I[12][1][3] = new Array();
+I[12][1][3][0]='\u9AD8\u901F\u92FC';
+I[12][1][3][1]='';
+I[12][1][3][2] = 0;
+I[12][2] = 1;
+
+I[13] = new Array();
+I[13][0]='\u78B3\u92FC\u5305\u62EC';
+I[13][1] = new Array();
+I[13][1][0] = new Array();
+I[13][1][0][0]='\u8D85\u78B3\u92FC';
+I[13][1][0][1]='';
+I[13][1][0][2] = 0;
+I[13][1][1] = new Array();
+I[13][1][1][0]='\u4E2D\u78B3';
+I[13][1][1][1]='';
+I[13][1][1][2] = 1;
+I[13][1][2] = new Array();
+I[13][1][2][0]='\u706B\u78B3\u92FC';
+I[13][1][2][1]='';
+I[13][1][2][2] = 0;
+I[13][1][3] = new Array();
+I[13][1][3][0]='\u4F4E\u78B3\u92FC';
+I[13][1][3][1]='';
+I[13][1][3][2] = 1;
+I[13][1][4] = new Array();
+I[13][1][4][0]='\u9AD8\u78B3\u92FC';
+I[13][1][4][1]='';
+I[13][1][4][2] = 1;
+I[13][2] = 1;
+
+I[14] = new Array();
+I[14][0]='\u9AD8\u901F\u92FC\u5305\u542B\u4E0B\u5217\u5143\u7D20';
+I[14][1] = new Array();
+I[14][1][0] = new Array();
+I[14][1][0][0]='\u78B3';
+I[14][1][0][1]='';
+I[14][1][0][2] = 1;
+I[14][1][1] = new Array();
+I[14][1][1][0]='\u927B';
+I[14][1][1][1]='';
+I[14][1][1][2] = 1;
+I[14][1][2] = new Array();
+I[14][1][2][0]='\u91E9';
+I[14][1][2][1]='';
+I[14][1][2][2] = 1;
+I[14][1][3] = new Array();
+I[14][1][3][0]='\u93A2';
+I[14][1][3][1]='';
+I[14][1][3][2] = 1;
+I[14][1][4] = new Array();
+I[14][1][4][0]='\u9237';
+I[14][1][4][1]='';
+I[14][1][4][2] = 0;
+I[14][2] = 1;
+
+I[15] = new Array();
+I[15][0]='\u4E0D\u92B9\u92FC\u5305\u542B\u6709\u4E0B\u5217\u5143\u7D20';
+I[15][1] = new Array();
+I[15][1][0] = new Array();
+I[15][1][0][0]='\u927B';
+I[15][1][0][1]='';
+I[15][1][0][2] = 1;
+I[15][1][1] = new Array();
+I[15][1][1][0]='\u93B3';
+I[15][1][1][1]='';
+I[15][1][1][2] = 1;
+I[15][1][2] = new Array();
+I[15][1][2][0]='\u78B3';
+I[15][1][2][1]='';
+I[15][1][2][2] = 1;
+I[15][1][3] = new Array();
+I[15][1][3][0]='\u787C';
+I[15][1][3][1]='';
+I[15][1][3][2] = 0;
+I[15][1][4] = new Array();
+I[15][1][4][0]='\u9237';
+I[15][1][4][1]='';
+I[15][1][4][2] = 0;
+I[15][2] = 1;
+
+I[16] = new Array();
+I[16][0]='\u4E0B\u5217\u90A3\u4E00\u7269\u54C1\u6703\u4F7F\u7528\u4E0D\u92B9\u92FC\u4F86\u88FD\u9020';
+I[16][1] = new Array();
+I[16][1][0] = new Array();
+I[16][1][0][0]='\u947D\u5480';
+I[16][1][0][1]='';
+I[16][1][0][2] = 0;
+I[16][1][1] = new Array();
+I[16][1][1][0]='\u9910\u5177';
+I[16][1][1][1]='';
+I[16][1][1][2] = 1;
+I[16][1][2] = new Array();
+I[16][1][2][0]='\u624B\u9318';
+I[16][1][2][1]='';
+I[16][1][2][2] = 0;
+I[16][1][3] = new Array();
+I[16][1][3][0]='\u5283\u91DD';
+I[16][1][3][1]='';
+I[16][1][3][2] = 0;
+I[16][2] = 0;
+
+I[17] = new Array();
+I[17][0]='\u4E0B\u5217\u90A3\u4E00\u7269\u54C1\u6703\u4F7F\u7528\u9AD8\u901F\u92FC\u4F86\u88FD\u9020';
+I[17][1] = new Array();
+I[17][1][0] = new Array();
+I[17][1][0][0]='\u947D\u5480';
+I[17][1][0][1]='';
+I[17][1][0][2] = 1;
+I[17][1][1] = new Array();
+I[17][1][1][0]='\u9910\u5177';
+I[17][1][1][1]='';
+I[17][1][1][2] = 0;
+I[17][1][2] = new Array();
+I[17][1][2][0]='\u624B\u9318';
+I[17][1][2][1]='';
+I[17][1][2][2] = 0;
+I[17][1][3] = new Array();
+I[17][1][3][0]='\u5283\u91DD';
+I[17][1][3][1]='';
+I[17][1][3][2] = 0;
+I[17][2] = 0;
+
+I[18] = new Array();
+I[18][0]='\u4E0B\u5217\u90A3\u4E00\u500B\u4E0D\u662F\u9435\u91D1\u5C6C';
+I[18][1] = new Array();
+I[18][1][0] = new Array();
+I[18][1][0][0]='\u9752\u9285';
+I[18][1][0][1]='';
+I[18][1][0][2] = 1;
+I[18][1][1] = new Array();
+I[18][1][1][0]='\u9EC3\u9285';
+I[18][1][1][1]='';
+I[18][1][1][2] = 1;
+I[18][1][2] = new Array();
+I[18][1][2][0]='\u4E0D\u92B9\u92FC';
+I[18][1][2][1]='';
+I[18][1][2][2] = 0;
+I[18][1][3] = new Array();
+I[18][1][3][0]='\u9AD8\u901F\u92FC';
+I[18][1][3][1]='';
+I[18][1][3][2] = 0;
+I[18][2] = 1;
+
+I[19] = new Array();
+I[19][0]='\u4E0B\u5217\u90A3\u4E00\u7D44\u975E\u9435\u91D1\u5C6C\u662F\u6B63\u78BA\u7684';
+I[19][1] = new Array();
+I[19][1][0] = new Array();
+I[19][1][0][0]='\u92C1\u3001\u9285\u3001\u925B\u3001\u932B\u3001\u92C5\u3001\u9280\u548C\u91D1<br />';
+I[19][1][0][1]='';
+I[19][1][0][2] = 1;
+I[19][1][1] = new Array();
+I[19][1][1][0]='\u92C1\u3001\u78B3\u92FC\u3001\u925B\u3001\u932B\u3001\u92C5\u3001\u9280\u548C\u91D1\u7B49 <br />';
+I[19][1][1][1]='';
+I[19][1][1][2] = 0;
+I[19][1][2] = new Array();
+I[19][1][2][0]='\u92C1\u3001\u9285\u3001\u925B\u3001\u932B\u3001\u92C5\u3001\u9280\u548C\u4E0D\u92B9\u92FC<br />';
+I[19][1][2][1]='';
+I[19][1][2][2] = 0;
+I[19][1][3] = new Array();
+I[19][1][3][0]='\u5408\u91D1\u92FC\u3001\u9285\u3001\u925B\u3001\u932B\u3001\u92C5\u3001\u9280\u548C\u91D1 <br />';
+I[19][1][3][1]='';
+I[19][1][3][2] = 0;
+I[19][2] = 0;
+
+I[20] = new Array();
+I[20][0]='\u9EC3\u9285\u5408\u91D1\u5305\u62EC\u6709\u4EE5\u4E0B\u5143\u7D20';
+I[20][1] = new Array();
+I[20][1][0] = new Array();
+I[20][1][0][0]='\u9285';
+I[20][1][0][1]='';
+I[20][1][0][2] = 1;
+I[20][1][1] = new Array();
+I[20][1][1][0]='\u92C5';
+I[20][1][1][1]='';
+I[20][1][1][2] = 1;
+I[20][1][2] = new Array();
+I[20][1][2][0]='\u932B';
+I[20][1][2][1]='';
+I[20][1][2][2] = 0;
+I[20][1][3] = new Array();
+I[20][1][3][0]='\u92C1';
+I[20][1][3][1]='';
+I[20][1][3][2] = 0;
+I[20][1][4] = new Array();
+I[20][1][4][0]='\u91D1';
+I[20][1][4][1]='';
+I[20][1][4][2] = 0;
+I[20][2] = 1;
+
+I[21] = new Array();
+I[21][0]='\u9752\u9285\u5408\u91D1\u5305\u62EC\u6709\u4EE5\u4E0B\u5143\u7D20';
+I[21][1] = new Array();
+I[21][1][0] = new Array();
+I[21][1][0][0]='\u9285';
+I[21][1][0][1]='';
+I[21][1][0][2] = 1;
+I[21][1][1] = new Array();
+I[21][1][1][0]='\u92C5';
+I[21][1][1][1]='';
+I[21][1][1][2] = 0;
+I[21][1][2] = new Array();
+I[21][1][2][0]='\u932B';
+I[21][1][2][1]='';
+I[21][1][2][2] = 1;
+I[21][1][3] = new Array();
+I[21][1][3][0]='\u92C1';
+I[21][1][3][1]='';
+I[21][1][3][2] = 0;
+I[21][1][4] = new Array();
+I[21][1][4][0]='\u91D1';
+I[21][1][4][1]='';
+I[21][1][4][2] = 0;
+I[21][2] = 1;
+
+I[22] = new Array();
+I[22][0]='\u675C\u62C9\u92C1\u5408\u91D1\u5305\u62EC\u6709\u4EE5\u4E0B\u5143\u7D20';
+I[22][1] = new Array();
+I[22][1][0] = new Array();
+I[22][1][0][0]='\u9333';
+I[22][1][0][1]='';
+I[22][1][0][2] = 1;
+I[22][1][1] = new Array();
+I[22][1][1][0]='\u92C5';
+I[22][1][1][1]='';
+I[22][1][1][2] = 0;
+I[22][1][2] = new Array();
+I[22][1][2][0]='\u932B';
+I[22][1][2][1]='';
+I[22][1][2][2] = 0;
+I[22][1][3] = new Array();
+I[22][1][3][0]='\u92C1';
+I[22][1][3][1]='';
+I[22][1][3][2] = 1;
+I[22][1][4] = new Array();
+I[22][1][4][0]='\u9285';
+I[22][1][4][1]='';
+I[22][1][4][2] = 1;
+I[22][2] = 1;
+
+I[23] = new Array();
+I[23][0]='\u786C\u5EA6\u8207\u92FC\u76F8\u7D04, \u4F46\u91CD\u91CF\u662F\u92FC\u7684\u4E09\u4EFD\u4E4B\u4E00';
+I[23][1] = new Array();
+I[23][1][0] = new Array();
+I[23][1][0][0]='\u675C\u62C9\u92C1';
+I[23][1][0][1]='';
+I[23][1][0][2] = 1;
+I[23][1][1] = new Array();
+I[23][1][1][0]='\u9EC3\u9285';
+I[23][1][1][1]='';
+I[23][1][1][2] = 0;
+I[23][1][2] = new Array();
+I[23][1][2][0]='\u9752\u9285';
+I[23][1][2][1]='';
+I[23][1][2][2] = 0;
+I[23][1][3] = new Array();
+I[23][1][3][0]='\u9444\u92FC';
+I[23][1][3][1]='';
+I[23][1][3][2] = 0;
+I[23][1][4] = new Array();
+I[23][1][4][0]='\u92C1';
+I[23][1][4][1]='';
+I[23][1][4][2] = 0;
+I[23][2] = 0;
+
+I[24] = new Array();
+I[24][0]='\u6728\u6750\u4E00\u822C\u5206\u5169\u5927\u985E';
+I[24][1] = new Array();
+I[24][1][0] = new Array();
+I[24][1][0][0]='\u5BE6\u6728';
+I[24][1][0][1]='';
+I[24][1][0][2] = 1;
+I[24][1][1] = new Array();
+I[24][1][1][0]='\u8EDF\u6728';
+I[24][1][1][1]='';
+I[24][1][1][2] = 0;
+I[24][1][2] = new Array();
+I[24][1][2][0]='\u786C\u6728';
+I[24][1][2][1]='';
+I[24][1][2][2] = 0;
+I[24][1][3] = new Array();
+I[24][1][3][0]='\u5408\u6210\u677F';
+I[24][1][3][1]='';
+I[24][1][3][2] = 1;
+I[24][1][4] = new Array();
+I[24][1][4][0]='\u593E\u677F';
+I[24][1][4][1]='';
+I[24][1][4][2] = 0;
+I[24][1][5] = new Array();
+I[24][1][5][0]='\u7E96\u7DAD\u677F';
+I[24][1][5][1]='';
+I[24][1][5][2] = 0;
+I[24][2] = 1;
+
+I[25] = new Array();
+I[25][0]='\u5BE6\u6728\u5206';
+I[25][1] = new Array();
+I[25][1][0] = new Array();
+I[25][1][0][0]='\u5BE6\u6728';
+I[25][1][0][1]='';
+I[25][1][0][2] = 0;
+I[25][1][1] = new Array();
+I[25][1][1][0]='\u8EDF\u6728';
+I[25][1][1][1]='';
+I[25][1][1][2] = 1;
+I[25][1][2] = new Array();
+I[25][1][2][0]='\u786C\u6728';
+I[25][1][2][1]='';
+I[25][1][2][2] = 1;
+I[25][1][3] = new Array();
+I[25][1][3][0]='\u5408\u6210\u677F';
+I[25][1][3][1]='';
+I[25][1][3][2] = 0;
+I[25][1][4] = new Array();
+I[25][1][4][0]='\u593E\u677F';
+I[25][1][4][1]='';
+I[25][1][4][2] = 0;
+I[25][1][5] = new Array();
+I[25][1][5][0]='\u7E96\u7DAD\u677F';
+I[25][1][5][1]='';
+I[25][1][5][2] = 0;
+I[25][2] = 1;
+
+I[26] = new Array();
+I[26][0]='\u5408\u6210\u677F\u5206';
+I[26][1] = new Array();
+I[26][1][0] = new Array();
+I[26][1][0][0]='\u5BE6\u6728';
+I[26][1][0][1]='';
+I[26][1][0][2] = 0;
+I[26][1][1] = new Array();
+I[26][1][1][0]='\u8EDF\u6728';
+I[26][1][1][1]='';
+I[26][1][1][2] = 0;
+I[26][1][2] = new Array();
+I[26][1][2][0]='\u786C\u6728';
+I[26][1][2][1]='';
+I[26][1][2][2] = 0;
+I[26][1][3] = new Array();
+I[26][1][3][0]='\u5408\u6210\u677F';
+I[26][1][3][1]='';
+I[26][1][3][2] = 0;
+I[26][1][4] = new Array();
+I[26][1][4][0]='\u593E\u677F';
+I[26][1][4][1]='';
+I[26][1][4][2] = 1;
+I[26][1][5] = new Array();
+I[26][1][5][0]='\u7E96\u7DAD\u677F';
+I[26][1][5][1]='';
+I[26][1][5][2] = 1;
+I[26][2] = 1;
+
+I[27] = new Array();
+I[27][0]='\u5BE6\u6728\u662F';
+I[27][1] = new Array();
+I[27][1][0] = new Array();
+I[27][1][0][0]='\u5C07\u6A39\u6728\u53BB\u9664\u679D\u8449\u548C\u6A39\u76AE\u5F8C\u6240\u5F97\u7684\u539F\u6728\u6750\u6599 <br />';
+I[27][1][0][1]='';
+I[27][1][0][2] = 1;
+I[27][1][1] = new Array();
+I[27][1][1][0]='\u5F9E\u91DD\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[27][1][1][1]='';
+I[27][1][1][2] = 0;
+I[27][1][2] = new Array();
+I[27][1][2][0]='\u5F9E\u95CA\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[27][1][2][1]='';
+I[27][1][2][2] = 0;
+I[27][1][3] = new Array();
+I[27][1][3][0]='\u7531\u4E09\u584A\u6216\u4EE5\u4E0A\u7684\u6728\u7247\u593E\u5C64\u4E92\u621090\u2218\u758A\u5408\u9ECF\u88FD\u800C\u6210';
+I[27][1][3][1]='';
+I[27][1][3][2] = 0;
+I[27][1][4] = new Array();
+I[27][1][4][0]='\u5C07\u6728\u6750\u3001\u7D19\u5F35\u3001\u8517\u6E23\u53CA\u690D\u7269\u7684\u7E96\u7DAD\u6417\u6563\u548C\u6DF7\u5408\uFF0C\u7136\u5F8C\u518D\u52A0\u5165\u81A0\u6F3F\u652A\u62CC\u5747\u52FB\uFF0C\u6700\u5F8C\u7528\u9AD8\u58D3\u88FD\u6210\u6728\u677F\u3002';
+I[27][1][4][1]='';
+I[27][1][4][2] = 0;
+I[27][2] = 0;
+
+I[28] = new Array();
+I[28][0]='\u8EDF\u6728\u662F';
+I[28][1] = new Array();
+I[28][1][0] = new Array();
+I[28][1][0][0]='\u5C07\u6A39\u6728\u53BB\u9664\u679D\u8449\u548C\u6A39\u76AE\u5F8C\u6240\u5F97\u7684\u539F\u6728\u6750\u6599 <br />';
+I[28][1][0][1]='';
+I[28][1][0][2] = 0;
+I[28][1][1] = new Array();
+I[28][1][1][0]='\u5F9E\u91DD\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[28][1][1][1]='';
+I[28][1][1][2] = 1;
+I[28][1][2] = new Array();
+I[28][1][2][0]='\u5F9E\u95CA\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[28][1][2][1]='';
+I[28][1][2][2] = 0;
+I[28][1][3] = new Array();
+I[28][1][3][0]='\u7531\u4E09\u584A\u6216\u4EE5\u4E0A\u7684\u6728\u7247\u593E\u5C64\u4E92\u621090\u2218\u758A\u5408\u9ECF\u88FD\u800C\u6210';
+I[28][1][3][1]='';
+I[28][1][3][2] = 0;
+I[28][1][4] = new Array();
+I[28][1][4][0]='\u5C07\u6728\u6750\u3001\u7D19\u5F35\u3001\u8517\u6E23\u53CA\u690D\u7269\u7684\u7E96\u7DAD\u6417\u6563\u548C\u6DF7\u5408\uFF0C\u7136\u5F8C\u518D\u52A0\u5165\u81A0\u6F3F\u652A\u62CC\u5747\u52FB\uFF0C\u6700\u5F8C\u7528\u9AD8\u58D3\u88FD\u6210\u6728\u677F\u3002';
+I[28][1][4][1]='';
+I[28][1][4][2] = 0;
+I[28][2] = 0;
+
+I[29] = new Array();
+I[29][0]='\u786C\u6728\u662F';
+I[29][1] = new Array();
+I[29][1][0] = new Array();
+I[29][1][0][0]='\u5C07\u6A39\u6728\u53BB\u9664\u679D\u8449\u548C\u6A39\u76AE\u5F8C\u6240\u5F97\u7684\u539F\u6728\u6750\u6599 <br />';
+I[29][1][0][1]='';
+I[29][1][0][2] = 0;
+I[29][1][1] = new Array();
+I[29][1][1][0]='\u5F9E\u91DD\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[29][1][1][1]='';
+I[29][1][1][2] = 0;
+I[29][1][2] = new Array();
+I[29][1][2][0]='\u5F9E\u95CA\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[29][1][2][1]='';
+I[29][1][2][2] = 1;
+I[29][1][3] = new Array();
+I[29][1][3][0]='\u7531\u4E09\u584A\u6216\u4EE5\u4E0A\u7684\u6728\u7247\u593E\u5C64\u4E92\u621090\u2218\u758A\u5408\u9ECF\u88FD\u800C\u6210';
+I[29][1][3][1]='';
+I[29][1][3][2] = 0;
+I[29][1][4] = new Array();
+I[29][1][4][0]='\u5C07\u6728\u6750\u3001\u7D19\u5F35\u3001\u8517\u6E23\u53CA\u690D\u7269\u7684\u7E96\u7DAD\u6417\u6563\u548C\u6DF7\u5408\uFF0C\u7136\u5F8C\u518D\u52A0\u5165\u81A0\u6F3F\u652A\u62CC\u5747\u52FB\uFF0C\u6700\u5F8C\u7528\u9AD8\u58D3\u88FD\u6210\u6728\u677F\u3002';
+I[29][1][4][1]='';
+I[29][1][4][2] = 0;
+I[29][2] = 0;
+
+I[30] = new Array();
+I[30][0]='\u593E\u677F\u662F';
+I[30][1] = new Array();
+I[30][1][0] = new Array();
+I[30][1][0][0]='\u5C07\u6A39\u6728\u53BB\u9664\u679D\u8449\u548C\u6A39\u76AE\u5F8C\u6240\u5F97\u7684\u539F\u6728\u6750\u6599 <br />';
+I[30][1][0][1]='';
+I[30][1][0][2] = 0;
+I[30][1][1] = new Array();
+I[30][1][1][0]='\u5F9E\u91DD\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[30][1][1][1]='';
+I[30][1][1][2] = 0;
+I[30][1][2] = new Array();
+I[30][1][2][0]='\u5F9E\u95CA\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[30][1][2][1]='';
+I[30][1][2][2] = 0;
+I[30][1][3] = new Array();
+I[30][1][3][0]='\u7531\u4E09\u584A\u6216\u4EE5\u4E0A\u7684\u6728\u7247\u593E\u5C64\u4E92\u621090\u2218\u758A\u5408\u9ECF\u88FD\u800C\u6210';
+I[30][1][3][1]='';
+I[30][1][3][2] = 1;
+I[30][1][4] = new Array();
+I[30][1][4][0]='\u5C07\u6728\u6750\u3001\u7D19\u5F35\u3001\u8517\u6E23\u53CA\u690D\u7269\u7684\u7E96\u7DAD\u6417\u6563\u548C\u6DF7\u5408\uFF0C\u7136\u5F8C\u518D\u52A0\u5165\u81A0\u6F3F\u652A\u62CC\u5747\u52FB\uFF0C\u6700\u5F8C\u7528\u9AD8\u58D3\u88FD\u6210\u6728\u677F\u3002';
+I[30][1][4][1]='';
+I[30][1][4][2] = 0;
+I[30][2] = 0;
+
+I[31] = new Array();
+I[31][0]='\u7E96\u7DAD\u677F\u662F';
+I[31][1] = new Array();
+I[31][1][0] = new Array();
+I[31][1][0][0]='\u5C07\u6A39\u6728\u53BB\u9664\u679D\u8449\u548C\u6A39\u76AE\u5F8C\u6240\u5F97\u7684\u539F\u6728\u6750\u6599 <br />';
+I[31][1][0][1]='';
+I[31][1][0][2] = 0;
+I[31][1][1] = new Array();
+I[31][1][1][0]='\u5F9E\u91DD\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[31][1][1][1]='';
+I[31][1][1][2] = 0;
+I[31][1][2] = new Array();
+I[31][1][2][0]='\u5F9E\u95CA\u8449\u6A39\u63A1\u4F10\u5F97\u4F86 <br />';
+I[31][1][2][1]='';
+I[31][1][2][2] = 0;
+I[31][1][3] = new Array();
+I[31][1][3][0]='\u7531\u4E09\u584A\u6216\u4EE5\u4E0A\u7684\u6728\u7247\u593E\u5C64\u4E92\u621090\u2218\u758A\u5408\u9ECF\u88FD\u800C\u6210';
+I[31][1][3][1]='';
+I[31][1][3][2] = 0;
+I[31][1][4] = new Array();
+I[31][1][4][0]='\u5C07\u6728\u6750\u3001\u7D19\u5F35\u3001\u8517\u6E23\u53CA\u690D\u7269\u7684\u7E96\u7DAD\u6417\u6563\u548C\u6DF7\u5408\uFF0C\u7136\u5F8C\u518D\u52A0\u5165\u81A0\u6F3F\u652A\u62CC\u5747\u52FB\uFF0C\u6700\u5F8C\u7528\u9AD8\u58D3\u88FD\u6210\u6728\u677F\u3002';
+I[31][1][4][1]='';
+I[31][1][4][2] = 1;
+I[31][2] = 0;
+
+I[32] = new Array();
+I[32][0]='\u593E\u677F\u5206';
+I[32][1] = new Array();
+I[32][1][0] = new Array();
+I[32][1][0][0]='\u5927\u82AF\u593E\u677F';
+I[32][1][0][1]='';
+I[32][1][0][2] = 1;
+I[32][1][1] = new Array();
+I[32][1][1][0]='\u7D30\u82AF\u593E\u677F';
+I[32][1][1][1]='';
+I[32][1][1][2] = 1;
+I[32][1][2] = new Array();
+I[32][1][2][0]=' \u8EDF\u82AF\u593E\u677F';
+I[32][1][2][1]='';
+I[32][1][2][2] = 0;
+I[32][1][3] = new Array();
+I[32][1][3][0]='\u786C\u82AF\u593E\u677F';
+I[32][1][3][1]='';
+I[32][1][3][2] = 0;
+I[32][2] = 1;
+
+
+Status = new Array();
+
+
+function CreateStatusArrays(){
+	for (var x=0; x<I.length; x++){
+		Status[x] = new Array();
+		Status[x][0] = 0; // Question not done yet
+		Status[x][1] = new Array(); //for tracking whether answers chosen
+		for (var y=0; y<I[x][1].length; y++){
+			Status[x][1][y] = '0'; //Answers not chosen yet
+		}
+		Status[x][2] = 0; //Wrong tries at this question so far
+		Status[x][3] = 0; //For storing score out of one on this question
+	}
+}
+
+function UpdateQuestionStatus(QNum){
+	if (Status[QNum][2] >= Status[QNum][1].length-1){
+		Status[QNum][0] = 1;
+		for (var i=0; i<Status[QNum][1].length; i++){
+			if (Status[QNum][1][i] == '0'){
+				Status[QNum][1][i] = 'R';
+			}
+		}
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function ChangeQ(ChangeBy){
+	var NewNum = CurrQNum + ChangeBy;
+	if ((NewNum >= 0)&&(NewNum<I.length)){
+		CurrQNum = NewNum;
+		ShowQuestion(CurrQNum);
+	}
+	var CurrScore = '';
+	if ((ContinuousScoring == true)&&(EraseFeedback == true)){
+		CalculateScore();
+		var CurrScore = YourScoreIs + ' ' + Score + '%.';
+		WriteFeedback(CurrScore);
+	}
+}
+
+function BuildQuestion(QNum){
+	if (I[QNum][2] == 0){
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = ARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[ALetter]', ' ' + ALetters.charAt(i) + ' ', TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	else{
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = MARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[Correct]', I[QNum][1][i][2], TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += CheckButton;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	return Temp;
+}
+
+function DisplayExercise(StuffToDisplay){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += StuffToDisplay;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+
+function ShowAllQs(){
+	var Output = '';
+	for (var i=0; i<I.length-1; i++){
+		Output = Output + BuildQuestion(i);
+		Output = Output + '<tr><td colspan="4"><hr></hr></td></tr>';
+	}
+	Output = Output + BuildQuestion(I.length-1);
+	Output = TableOpener + Output + TableCloser;
+	DisplayExercise(Output);
+}
+
+function ShowQuestion(QNum){
+//First, create the Q number readout at the top
+	var Readout = (QNum+1) + '/' + I.length;
+	while (Readout.length < 7){
+		Readout = ' ' + Readout + ' ';
+	}
+	Readout = QButtonsOpener + Readout + QButtonsCloser;
+
+	var Output = BuildQuestion(QNum);
+
+	Output = TableOpener + Output + TableCloser;
+
+	DisplayExercise(Readout + Output);
+
+//Mark the answers already done
+	for (i=0; i<Status[QNum][1].length; i++){
+		if (Status[QNum][1][i] == 'R'){
+			MarkAnswer(QNum,i,true)
+		}
+		if (Status[QNum][1][i] == 'W'){
+			MarkAnswer(QNum,i,false)
+		}
+		if (Status[QNum][1][i] == 'C'){
+			CheckCheckbox(QNum,i);
+		}
+	}
+//Eliminate feedback from previous question
+	if (EraseFeedback == true){
+		WriteFeedback('');
+	}
+}
+
+function CheckMulti(QNum){
+	var TotWrong = 0;
+	var Output = '';
+	var TotAns = I[QNum][1].length;
+	for (var i=TotAns-1; i>=0; i--){
+//Find any incorrect choices
+
+		var b = eval('BottomFrame.document.QForm.A_' + QNum + '_' + i);
+
+		if (b != null){
+//if it's wrong, count it
+			if (b.checked == true){
+				Status[QNum][1][i] = 'C';
+			}
+			else{
+				Status[QNum][1][i] = 'U';
+			}
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+
+	if (TotWrong == 0){
+		Output = DefaultRight;
+	}
+	else{
+		Output = DefaultWrong + '<br />' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+
+//If you haven't tried the question before
+	if (Status[QNum][0] == 0){
+		if (TotWrong > 0){
+			Status[QNum][2]++;
+		}
+		if (TotWrong == 0){
+			Status[QNum][0] = 1;
+//Calculate the score for this question as a floating-point fraction of 1
+			Status[QNum][3] =  ((Status[QNum][1].length - Status[QNum][2]) - 1) / (Status[QNum][1].length - 1);
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			CalculateScore();
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+
+}
+
+function CheckAnswer(QNum, ANum){
+	var Output = I[QNum][1][ANum][1];
+
+	if (Output==''){
+		if (I[QNum][1][ANum][2] == 1){
+			Output = DefaultRight;
+		}
+		else{
+			Output = DefaultWrong;
+		}
+	}
+
+//If it's not been previously answered correctly
+	if (Status[QNum][0] == 0){
+//If it's a correct answer
+		if (I[QNum][1][ANum][2] == 1){
+			Status[QNum][0] = 1;//Mark the Q as done
+			Status[QNum][1][ANum] = 'R';
+			MarkAnswer(QNum, ANum, true);
+//Calculate the score for this question as a floating-point fraction of 1
+			var PossibleWrongs = 0;
+			for (var i=0; i<I[QNum][1].length; i++){
+				if (I[QNum][1][i][2] == 0){
+					PossibleWrongs++;
+				}
+			}
+
+			if (PossibleWrongs == 0){PossibleWrongs = 1;}
+
+			Status[QNum][3] = 1 - (Status[QNum][2]/PossibleWrongs);
+
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+		else{
+			if (Status[QNum][1][ANum] != 'W'){
+				Status[QNum][1][ANum] = 'W';
+				MarkAnswer(QNum, ANum, false);
+				Status[QNum][2]++; //increment wrong tries for this Q
+			}
+		}
+	}
+
+	UpdateQuestionStatus(QNum);
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			CalculateScore();
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+}
+
+function CalculateScore(){
+	var TriedQs = 0;
+	var TotalScore = 0;
+	for (var i=0; i<Status.length; i++){
+		if ((Status[i][2] > 0)||(Status[i][3] == 1)){
+			TriedQs++;
+			TotalScore += Status[i][3];
+		}
+	}
+	if (TriedQs == 0){
+		Score = 0;
+	}
+	else{
+		Score = (Math.floor(100 * (TotalScore/TriedQs)));
+	}
+}
+
+function MarkAnswer(QNum, ANum, Right){
+	var Mark = CorrectIndicator;
+	if (Right == false){Mark = IncorrectIndicator;}
+
+	if (eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum).value = Mark;
+	}
+}
+
+function CheckCheckbox(QNum, ANum){
+	if (eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum).checked = true;
+	}
+}
+
+
+
+
+
+
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+
+<frameset rows="25%,*" onload="StartUp()" framespacing="0" border="0">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+</frameset>
+
+
+
+
+
+<!-- Mirrored from www.cmass.edu.hk/~ts/exercises/S4/McMaterial/materi04.htm by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 19 Aug 2009 02:27:41 GMT -->
+</html>

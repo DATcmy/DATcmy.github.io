@@ -1,0 +1,749 @@
+<html>
+
+<!-- Mirrored from www.cmass.edu.hk/~ts/exercises/S1/Nameplate/nameplate01.htm by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 19 Aug 2009 02:27:37 GMT -->
+<head><meta name="author" content="Created with Hot Potatoes by Half-Baked Software, registered to Tam Simon."></meta><meta name="keywords" content="Hot Potatoes, Half-Baked Software, Windows, University of Victoria"></meta>
+<title>
+&#20126;&#21152;&#21147;&#33184;&#29255;&#25509;&#21512;&#26041;&#27861;
+</title>
+
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('http://www.cmass.edu.hk/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('http://www.cmass.edu.hk/~ts/exercises/S1/');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('http://www.cmass.edu.hk/~ts/exercises/S1/');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http://www.cmass.edu.hk/~ts/exercises/S1/Nameplate/nameplate01.htm'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = Temp.substring(sLoc,z);
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+
+var ExBGColor = '#bbbbee';
+
+
+
+var PageBGColor = '#ffffff';
+
+
+
+var NavBarColor = '#000066';
+
+
+var TextColor = '#000000';
+var CurrQNum = 0;
+var ALetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CorrectIndicator = ':-)';
+var IncorrectIndicator = 'X';
+var YourScoreIs = '&#20320;&#30340;&#24471;&#20998;&#26159;';
+var Tries = 0;
+var CorrectChoices = 0;
+var ContinuousScoring = true;
+var CorrectFirstTime = '&#21839;&#38988;&#31532;&#19968;&#27425;&#20316;&#31572;&#27491;&#30906;';var ExerciseTitle = '&#20126;&#21152;&#21147;&#33184;&#29255;&#25509;&#21512;&#26041;&#27861;';
+var ExerciseSubtitle = '&#22810;&#38917;&#36984;&#25799;&#38988;';
+var Instructions = '&#24478;&#19979;&#38754;&#36984;&#25799;&#19968;&#27491;&#30906;&#31572;&#26696;'; //'';
+var ShuffleQs = true;
+var ShuffleAs = true;
+var DefaultRight = '&#27491;&#30906;';
+var DefaultWrong = '&#37679;&#20102;, &#20877;&#22039;&#35430;&#19968;&#27425;';
+var QsToShow = 7;
+var ShowOneByOne = true;
+var ReadingURL = '';
+
+var PreviousPage = history.length;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#000066" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+NavBar+='<input type="button" value="&lt;=" onclick="parent.GoBack()"></input>';
+
+
+NavBar+='<input type="button" value="&#33267;&#32178;&#38913;" onclick=\'parent.location="bkhome.htm"\'></input>';
+
+
+NavBar+='<input type="button" value="=&gt;" onclick=\'parent.location="nextpage.htm"\'></input>';
+NavBar+='</font></td></form></tr>';
+if (is.CRAPBrowser){NavBar=ResolveAllURLs(NavBar)};
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#ffffff">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var QButtonsOpener = '<table border="0" width="85%" cellpadding="10">';
+QButtonsOpener += '<tr><td align="center" valign="middle"><form>';
+QButtonsOpener += '<font size="+1"><input type="button" value="&lt;=" onclick="parent.ChangeQ(-1)"></input>';
+var QButtonsCloser = '<input type="button" value="=&gt;" onclick="parent.ChangeQ(1)"></input>';
+QButtonsCloser += '</font></form></td></tr></table>';
+
+var TableOpener = '<form name="QForm">';
+TableOpener += '<table border="0" width="85%">';
+var QRow = '<tr><td valign="top" bgcolor="#bbbbee" align="right">';
+QRow += '<font size="+1" face="Geneva,Arial" color="#000000">[QNumber]</font></td>';
+QRow += '<td colspan="3" valign="top" bgcolor="#bbbbee"><font size="-1" face="Geneva,Arial" color="#000000">[Question]<br />&nbsp;';
+QRow += '</font></td></tr>';
+
+var ARow = '<tr><td></td><td valign="top" bgcolor="#bbbbee"><input type="text" value=" " size="3" name="FB_[QNum]_[ANum]"></input></td>';
+ARow += '<td valign="top" bgcolor="#bbbbee"><input type="button" value="[ALetter]" OnClick="parent.CheckAnswer([QNum],[ANum])"></input></td>';
+ARow += '<td width="100%" bgcolor="#bbbbee"><font size="-1" face="Geneva,Arial" color="#000000">[Ans]</font></td></tr>';
+
+var MARow = '<tr><td></td><td valign="top" bgcolor="#bbbbee" colspan="3"><input type="checkbox" name="A_[QNum]_[ANum]" value="[Correct]"></input>';
+MARow += '<font size="-1" face="Geneva,Arial" color="#000000">[Ans]</font></td></tr>';
+
+var CheckButton = '<tr><td></td><td valign="top" bgcolor="#bbbbee" ><input type="button" value="&#26680;&#26597;"';
+CheckButton += ' onclick="parent.CheckMulti([QNum])"></input></td></tr>';
+
+TableCloser = '</table></form>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+function ReduceItems(){
+	var ItemToDump=0;
+	var j=0;
+	while (I.length > QsToShow){
+		ItemToDump = Math.floor(I.length*Math.random());
+		for (j=ItemToDump; j<(I.length-1); j++){
+			I[j] = I[j+1];
+		}
+		I.length = I.length-1;
+	}
+}
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function StartUp(){
+
+
+//Write the top frame
+	WriteFeedback(Instructions);
+
+
+
+//Reduce array if required
+	if (QsToShow < I.length){
+		ReduceItems();
+	}
+
+//Shuffle stuff if required
+
+	if (ShuffleQs == true){
+		I = Shuffle(I);
+	}
+
+	if (ShuffleAs == true){
+		for (var i=0; i<I.length; i++){
+			I[i][1] = Shuffle(I[i][1]);
+		}
+	}
+
+//Create arrays
+	CreateStatusArrays();
+
+
+
+//Show the first question or all of them
+	if (ShowOneByOne == false){
+		ShowAllQs();
+	}
+	else{
+		ShowQuestion(CurrQNum);
+	}
+}
+
+
+I = new Array();
+
+I[0] = new Array();
+I[0][0]='\u4E0B\u5217\u90A3\u4E00\u6A23\u8F03\u9069\u5408\u4F5C\u4E9E\u52A0\u529B\u81A0\u7247\u7684\u9ECF\u5408\u5851\u6599\u3002';
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='\u767D\u81A0\u69F3';
+I[0][1][0][1]='';
+I[0][1][0][2] = 0;
+I[0][1][1] = new Array();
+I[0][1][1][0]='\u6728\u81A0\u7C89';
+I[0][1][1][1]='';
+I[0][1][1][2] = 0;
+I[0][1][2] = new Array();
+I[0][1][2][0]='\u54E5\u7F85\u82B3';
+I[0][1][2][1]='';
+I[0][1][2][2] = 1;
+I[0][1][3] = new Array();
+I[0][1][3][0]='\u842C\u80FD\u81A0';
+I[0][1][3][1]='';
+I[0][1][3][2] = 0;
+I[0][2] = 0;
+
+I[1] = new Array();
+I[1][0]='\u4E0B\u5217\u90A3\u4E00\u6A23\u8F03\u9069\u5408\u4F5C\u4E9E\u52A0\u529B\u81A0\u7247\u7684\u5927\u91CF\u9ECF\u5408\u7528\u3002';
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='AA\u8D85\u80FD\u81A0 ';
+I[1][1][0][1]='';
+I[1][1][0][2] = 0;
+I[1][1][1] = new Array();
+I[1][1][1][0]='\u5316\u81A0\u6C34';
+I[1][1][1][1]='';
+I[1][1][1][2] = 1;
+I[1][1][2] = new Array();
+I[1][1][2][0]='\u6728\u81A0\u7C89';
+I[1][1][2][1]='';
+I[1][1][2][2] = 0;
+I[1][1][3] = new Array();
+I[1][1][3][0]='\u71B1\u7194\u81A0';
+I[1][1][3][1]='';
+I[1][1][3][2] = 0;
+I[1][2] = 0;
+
+I[2] = new Array();
+I[2][0]='\u4E0B\u5217\u90A3\u4E00\u500B\u4E0D\u662F\u4E9E\u52A0\u529B\u81A0\u7247\u7684\u7279\u6027';
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='\u662F\u4E00\u7A2E\u71B1\u5851\u6027\u5851\u81A0';
+I[2][1][0][1]='';
+I[2][1][0][2] = 0;
+I[2][1][1] = new Array();
+I[2][1][1][0]='\u6027\u8CEA\u5805\u786C\uFF0C\u5BB9\u6613\u4E0A\u8272';
+I[2][1][1][1]='';
+I[2][1][1][2] = 0;
+I[2][1][2] = new Array();
+I[2][1][2][0]='\u5177\u826F\u597D\u5149\u50B3\u5C0E\u3001\u6297\u98A8\u5316\u3001\u6297\u5316\u5B78\u4FB5\u8755';
+I[2][1][2][1]='';
+I[2][1][2][2] = 0;
+I[2][1][3] = new Array();
+I[2][1][3][0]='\u662F\u826F\u597D\u7684\u96FB\u5C0E\u9AD4';
+I[2][1][3][1]='';
+I[2][1][3][2] = 1;
+I[2][2] = 0;
+
+I[3] = new Array();
+I[3][0]='\u4E9E\u52A0\u529B\u81A0\u7247\u7684\u9ECF\u5408\u5851\u5291';
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='\u662F\u5C0D\u4EBA\u9AD4\u6709\u5BB3\u7684\u7269\u8CEA, \u4E0D\u5B9C\u7528\u624B\u63A5\u89F8, \u4F46\u5438\u5165\u9AD4\u5167\u4E26\u4E0D\u6703\u505A\u6210\u8EAB\u4F53\u6709\u4E0D\u826F\u53CD\u61C9';
+I[3][1][0][1]='';
+I[3][1][0][2] = 0;
+I[3][1][1] = new Array();
+I[3][1][1][0]='\u662F\u5C0D\u4EBA\u9AD4\u6709\u5BB3\u7684\u7269\u8CEA, \u4E0D\u5B9C\u5438\u5165\u9AD4\u5167, \u4F46\u7528\u624B\u63A5\u89F8\u4E26\u4E0D\u6703\u505A\u6210\u8EAB\u4F53\u6709\u4E0D\u826F\u53CD\u61C9';
+I[3][1][1][1]='';
+I[3][1][1][2] = 1;
+I[3][1][2] = new Array();
+I[3][1][2][0]='\u662F\u5C0D\u4EBA\u9AD4\u6C92\u6709\u5BB3\u7684\u7269\u8CEA, \u5C11\u91CF\u63A5\u89F8\u53CA\u5438\u5165, \u4E0D\u6703\u505A\u6210\u8EAB\u4F53\u6709\u4E0D\u826F\u53CD\u61C9';
+I[3][1][2][1]='';
+I[3][1][2][2] = 0;
+I[3][1][3] = new Array();
+I[3][1][3][0]='\u662F\u5C0D\u4EBA\u9AD4\u6C92\u6709\u5BB3\u7684\u7269\u8CEA, \u4F46\u4EA6\u4E0D\u5B9C\u5927\u91CF\u63A5\u89F8\u53CA\u5438\u5165';
+I[3][1][3][1]='';
+I[3][1][3][2] = 0;
+I[3][2] = 0;
+
+I[4] = new Array();
+I[4][0]='\u4E0B\u5217\u90A3\u4E00\u500B\u662F\u6700\u9069\u5408\u5F62\u5BB9\u4E9E\u52A0\u529B\u81A0\u7247\u7684\u71B1\u5851\u6027\u5851';
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='\u81A0\u7247\u7D93\u52A0\u71B1\u5F8C\u6703\u8EDF\u5316\uFF0C\u7E7C\u800C\u7194\u878D\u3002\u51B7\u537B\u5F8C\u4FBF\u6703\u8B8A\u786C\uFF0C\u4E26\u56DE\u5FA9\u539F\u4F86\u7684\u5F37\u5EA6\u548C\u6027\u8CEA\u3002 ';
+I[4][1][0][1]='';
+I[4][1][0][2] = 1;
+I[4][1][1] = new Array();
+I[4][1][1][0]='\u81A0\u7247\u7D93\u52A0\u71B1\u5F8C\u6703\u8EDF\u5316\uFF0C\u7E7C\u800C\u7194\u878D\u3002\u51B7\u537B\u5F8C\u4FBF\u6703\u8B8A\u786C\uFF0C\u539F\u4F86\u7684\u5F37\u5EA6\u548C\u6027\u8CEA\u6D88\u5931\u3002 ';
+I[4][1][1][1]='';
+I[4][1][1][2] = 0;
+I[4][1][2] = new Array();
+I[4][1][2][0]='\u81A0\u7247\u7D93\u52A0\u71B1\u5F8C\u6703\u7194\u89E3\uFF0C\u51B7\u537B\u5F8C\u4FBF\u6703\u8B8A\u56FA\u4F53\uFF0C\u4E26\u56DE\u5FA9\u539F\u4F86\u7684\u5F37\u5EA6\u548C\u6027\u8CEA\u3002  ';
+I[4][1][2][1]='';
+I[4][1][2][2] = 0;
+I[4][1][3] = new Array();
+I[4][1][3][0]='\u81A0\u7247\u7D93\u52A0\u71B1\u5F8C\u6703\u7194\u89E3\uFF0C\u51B7\u537B\u5F8C\u4FBF\u6703\u8B8A\u56FA\u4F53\uFF0C\u539F\u4F86\u7684\u5F37\u5EA6\u548C\u6027\u8CEA\u6D88\u5931\u3002 ';
+I[4][1][3][1]='';
+I[4][1][3][2] = 0;
+I[4][2] = 0;
+
+I[5] = new Array();
+I[5][0]='\u4F7F\u7528\u81A0\u7247\u9385\u5200\u4F5C\u76F4\u7DDA\u9385\u5207\u4E9E\u52A0\u529B\u81A0\u7247, \u8981\u5728\u81A0\u7247\u4E0A\u522E\u51FA\u4E00\u689D\u76F4\u5751, \u6DF1\u5EA6\u6700\u5C11';
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='1/5\u5DE5\u4EF6\u539A\u5EA6 ';
+I[5][1][0][1]='';
+I[5][1][0][2] = 0;
+I[5][1][1] = new Array();
+I[5][1][1][0]='1/4\u5DE5\u4EF6\u539A\u5EA6';
+I[5][1][1][1]='';
+I[5][1][1][2] = 0;
+I[5][1][2] = new Array();
+I[5][1][2][0]='1/3\u5DE5\u4EF6\u539A\u5EA6 ';
+I[5][1][2][1]='';
+I[5][1][2][2] = 1;
+I[5][1][3] = new Array();
+I[5][1][3][0]='1/2\u5DE5\u4EF6\u539A\u5EA6';
+I[5][1][3][1]='';
+I[5][1][3][2] = 0;
+I[5][2] = 0;
+
+I[6] = new Array();
+I[6][0]='\u4F7F\u7528\u4E9E\u52A0\u529B\u81A0\u7247\u9ECF\u5408\u5291\u7684\u6B21\u5E8F\u662F<br />1. \u70BA\u907F\u514D\u6709\u6C23\u6CE1\u85CF\u5728\u593E\u53E3\u5167, \u63A5\u99C1\u6642\u8981\u5E73\u5747\u65BD\u58D3,\u76F4\u81F3\u593E\u53E3\u7A69\u56FA\u70BA\u6B62\u3002<br />2. \u6E05\u6F54\u81A0\u7247\u7684\u63A5\u5408\u5730\u65B9\u3002<br />3. \u8FC5\u901F\u5C07\u593E\u53E3\u7DCA\u5408\u3002<br />4. \u5C07\u5316\u81A0\u6C34\u5857\u5728\u63A5\u99C1\u53E3\u4E0A\u3002<br />';
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='1,2,3,4 ';
+I[6][1][0][1]='';
+I[6][1][0][2] = 0;
+I[6][1][1] = new Array();
+I[6][1][1][0]='2,4,1,3';
+I[6][1][1][1]='';
+I[6][1][1][2] = 0;
+I[6][1][2] = new Array();
+I[6][1][2][0]='3,2,4,1';
+I[6][1][2][1]='';
+I[6][1][2][2] = 0;
+I[6][1][3] = new Array();
+I[6][1][3][0]='2,4,3,1';
+I[6][1][3][1]='';
+I[6][1][3][2] = 1;
+I[6][2] = 0;
+
+
+Status = new Array();
+
+
+function CreateStatusArrays(){
+	for (var x=0; x<I.length; x++){
+		Status[x] = new Array();
+		Status[x][0] = 0; // Question not done yet
+		Status[x][1] = new Array(); //for tracking whether answers chosen
+		for (var y=0; y<I[x][1].length; y++){
+			Status[x][1][y] = '0'; //Answers not chosen yet
+		}
+		Status[x][2] = 0; //Tries at this question so far
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function ChangeQ(ChangeBy){
+	var NewNum = CurrQNum + ChangeBy;
+	if ((NewNum >= 0)&&(NewNum<I.length)){
+		CurrQNum = NewNum;
+		ShowQuestion(CurrQNum);
+	}
+}
+
+function BuildQuestion(QNum){
+	if (I[QNum][2] == 0){
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = ARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[ALetter]', ' ' + ALetters.charAt(i) + ' ', TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	else{
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = MARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[Correct]', I[QNum][1][i][2], TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += CheckButton;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	return Temp;
+}
+
+function DisplayExercise(StuffToDisplay){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += StuffToDisplay;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+
+function ShowAllQs(){
+	var Output = '';
+	for (var i=0; i<I.length-1; i++){
+		Output = Output + BuildQuestion(i);
+		Output = Output + '<tr><td colspan="4"><hr></hr></td></tr>';
+	}
+	Output = Output + BuildQuestion(I.length-1);
+	Output = TableOpener + Output + TableCloser;
+	DisplayExercise(Output);
+}
+
+function ShowQuestion(QNum){
+//First, create the Q number readout at the top
+	var Readout = (QNum+1) + '/' + I.length;
+	while (Readout.length < 7){
+		Readout = ' ' + Readout + ' ';
+	}
+	Readout = QButtonsOpener + Readout + QButtonsCloser;
+
+	var Output = BuildQuestion(QNum);
+
+	Output = TableOpener + Output + TableCloser;
+
+	DisplayExercise(Readout + Output);
+
+//Mark the answers already done
+	for (i=0; i<Status[QNum][1].length; i++){
+		if (Status[QNum][1][i] == 'R'){
+			MarkAnswer(QNum,i,true)
+		}
+		if (Status[QNum][1][i] == 'W'){
+			MarkAnswer(QNum,i,false)
+		}
+		if (Status[QNum][1][i] == 'C'){
+			CheckCheckbox(QNum,i);
+		}
+	}
+}
+
+function CheckMulti(QNum){
+	var TotWrong = 0;
+	var Output = '';
+	var TotAns = I[QNum][1].length;
+	for (var i=TotAns-1; i>=0; i--){
+//Find any incorrect choices
+
+		var b = eval('BottomFrame.document.QForm.A_' + QNum + '_' + i);
+
+		if (b != null){
+//if it's wrong, count it
+			if (b.checked == true){
+				Status[QNum][1][i] = 'C';
+			}
+			else{
+				Status[QNum][1][i] = 'U';
+			}
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+
+	if (TotWrong == 0){
+		Output = DefaultRight;
+	}
+	else{
+		Output = DefaultWrong + '<br />' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+
+//If you haven't tried the question before
+	if (Status[QNum][0] == 0){
+		Status[QNum][2]++;
+		Tries++;
+		if (TotWrong == 0){
+			Status[QNum][0] = 1;
+			CorrectChoices++;
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			var Score = (Math.floor(100 * (CorrectChoices/Tries)));
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 1){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+
+}
+
+function CheckAnswer(QNum, ANum){
+	var Output = I[QNum][1][ANum][1];
+
+	if (Output==''){
+		if (I[QNum][1][ANum][2] == 1){
+			Output = DefaultRight;
+		}
+		else{
+			Output = DefaultWrong;
+		}
+	}
+
+//If it's not been previously answered correctly
+	if (Status[QNum][0] == 0){
+		Status[QNum][2]++; //increment tries for this Q
+//If it's a correct answer
+		if (I[QNum][1][ANum][2] == 1){
+			Status[QNum][0] = 1;//Mark the Q as done
+			Status[QNum][1][ANum] = 'R';
+			MarkAnswer(QNum, ANum, true);
+			CorrectChoices++;
+		}
+		else{
+			Status[QNum][1][ANum] = 'W';
+			MarkAnswer(QNum, ANum, false);
+		}
+		Tries++;
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			var Score = (Math.floor(100 * (CorrectChoices/Tries)));
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 1){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+}
+
+function MarkAnswer(QNum, ANum, Right){
+	var Mark = CorrectIndicator;
+	if (Right == false){Mark = IncorrectIndicator;}
+
+	if (eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum).value = Mark;
+	}
+}
+
+function CheckCheckbox(QNum, ANum){
+	if (eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum).checked = true;
+	}
+}
+
+
+
+
+
+
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+
+
+</head>
+<!--<body>Fool those dumb ad-inserting ISPs</body>-->
+
+<!--For full XHTML 1.0 compatibility, remove the border and framespacing attributes.
+These are required for proper display in current browsers, but render the document incompatible. Then, you'll need to add the appropriate Document Type Declaration; use
+the W3C XHTML 1 frameset DTD.-->
+
+
+<frameset rows="25%,*" onload="StartUp()" framespacing="0" border="0">
+	<frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame"></frame>
+	<frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame"></frame>
+</frameset>
+
+
+
+
+
+<!-- Mirrored from www.cmass.edu.hk/~ts/exercises/S1/Nameplate/nameplate01.htm by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 19 Aug 2009 02:27:37 GMT -->
+</html>
