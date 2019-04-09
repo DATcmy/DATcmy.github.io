@@ -1,0 +1,189 @@
+<html>
+
+<!-- Mirrored from www.cmass.edu.hk/~tf/0203TfHmPage/S1RoComp/S1index.html by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 19 Aug 2009 01:42:54 GMT -->
+<head>
+
+
+<script language="JavaScript1.1">
+var photos=new Array()
+var photoslink=new Array()
+var which=0
+var headermessage
+
+
+//*****************************************
+// Edit the title of you slide show below
+//*****************************************
+headermessage="中一機械獸外殼設計比賽(01至15名參賽作品)"
+
+
+// ************************************************************************
+// Please provide filenames of you impages or photos in this section below
+// ************************************************************************
+photos[0]="1.jpg"
+photos[1]="2.jpg"
+photos[2]="3.jpg"
+photos[3]="4.jpg"
+photos[4]="5.jpg"
+photos[5]="6.jpg"
+photos[6]="7.jpg"
+photos[7]="8.jpg"
+photos[8]="9.jpg"
+photos[9]="10.jpg"
+photos[10]="11.jpg"
+photos[11]="12.jpg"
+photos[12]="13.jpg"
+photos[13]="14.jpg"
+photos[14]="15.jpg"
+//**********************************************************************
+//Specify whether images should be linked or not (1=linked 0=nolinked)
+//**********************************************************************
+var linkornot=0
+
+
+//******************* Warming Warning Warning ******************
+//                                                             *
+//                   DO NOT edit pass this line                *
+//                                                             *
+//******************* Warning Warning Warning ******************
+
+var preloadedimages=new Array()
+for (i=0;i<photos.length;i++){
+preloadedimages[i]=new Image()
+preloadedimages[i].src=photos[i]
+}
+
+
+function applyeffect(){
+if (document.all){
+photoslider.filters.revealTrans.Transition=Math.floor(Math.random()*23)
+photoslider.filters.revealTrans.stop()
+photoslider.filters.revealTrans.apply()
+}
+}
+
+
+function playeffect(){
+if (document.all)
+photoslider.filters.revealTrans.play()
+}
+
+function keeptrack(){
+window.status="Image "+(which+1)+" of "+photos.length
+}
+
+
+function backward(){
+if (which>0){
+which--
+applyeffect()
+document.images.photoslider.src=photos[which]
+playeffect()
+keeptrack()
+}
+}
+
+function forward(){
+if (which<photos.length-1){
+which++
+applyeffect()
+document.images.photoslider.src=photos[which]
+playeffect()
+keeptrack()
+}
+}
+
+function transport(){
+window.location=photoslink[which]
+}
+
+</script>
+
+
+</head>
+
+<body text="#000000" bgcolor="#000000">
+
+<h2>
+<script language="JavaScript1.2">
+//****************************************
+///No need to edit below this line/////
+//****************************************
+var message=headermessage
+var neonbasecolor="gray"
+var neontextcolor="yellow"
+var flashspeed=100  //in milliseconds
+
+if (message=="") { message="No Title Given"; }
+ 
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+function neon(){
+
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+//eval("document.all.neonlight"+m).style.color=neonbasecolor
+crossref(m).style.color=neonbasecolor
+}
+
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",1500)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+
+</script>
+</h2>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%" colspan="2" height="50"><center>
+<script>
+if (linkornot==1)
+document.write('<a href="javascript:transport()">')
+document.write('<img src="'+photos[0]+'" name="photoslider" style="filter:revealTrans(duration=2,transition=23)" border=0>')
+if (linkornot==1)
+document.write('</a>')
+</script>
+</center></td>
+  </tr>
+  <tr>
+    <td width="50%" height="21"><p align="left"><a href="#" onClick="backward();return false">向後</a></td>
+    <td width="50%" height="21"><p align="right"><a href="#" onClick="forward();return false">向前</a></td>
+  </tr>
+</table>
+
+</body>
+
+<!-- Mirrored from www.cmass.edu.hk/~tf/0203TfHmPage/S1RoComp/S1index.html by HTTrack Website Copier/3.x [XR&CO'2008], Wed, 19 Aug 2009 01:43:16 GMT -->
+</html>
